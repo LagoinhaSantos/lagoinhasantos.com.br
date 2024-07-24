@@ -1,5 +1,10 @@
-# Vue 3 + Vite
+# Igreja Lagoinha Santos
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<h1 align="center">
+    <img src="./assets/LAGOINHASANTOS.png">
+    <p>APLICAÇÃO LAGOINHA SANTOS</p>
+</h1>
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 🤍 SOBRE
+
+<p>Este site foi criado com muito amor para compartilhar o Evangelho com todos. Aqui você encontrará informações como horários de funcionamento, orientações sobre dízimo e muito mais. Todo o projeto foi realizado por um voluntário dedicado, que generosamente compartilhou sua sabedoria para expressar o amor por Deus.</p>
