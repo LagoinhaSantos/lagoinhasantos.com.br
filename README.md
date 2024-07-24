@@ -1,7 +1,7 @@
 # Igreja Lagoinha Santos
 
 <h1 align="center">
-    <img src="./assets/LAGOINHASANTOS.png">
+    <img src="./src/assets/readme.png">
     <p>APLICAÇÃO LAGOINHA SANTOS</p>
 </h1>
 
