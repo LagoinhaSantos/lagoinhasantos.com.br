@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Card altura="500px" largura="100%" class="bg" background="../src/assets/TRIO02.jpeg">
+    <Card altura="500px" largura="100%" background="../src/assets/trio02.jpg">
       <Logo size="1000px" />
       <img src="../assets/passaro.png">
     </Card>
@@ -178,10 +178,6 @@ export default {
   height: 100%;
   font-family: "Montserrat", sans-serif;
   color: white;
-}
-
-.bg {
-  background-color: url('../assets/criancas.png');
 }
 
 .content svg {
