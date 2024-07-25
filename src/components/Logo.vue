@@ -1,30 +1,34 @@
 <template>
-    <div class="logo">
-        <img :src="logoSrc" :style="{ width: size, height: size2 }">
+    <div class="logo" >
+        <img src="../assets/NAME.png" :alt="alt" :style="{ width: width, height: height }">
     </div>
 </template>
 
-<script setup>
-import { ref, defineProps } from 'vue';
+<script>
 
-const logo = defineProps({
-    size: {
-        type: String,
-        default: '100px'
-    },
-    size2: {
-        type: String,
-        default: 'auto'
-    },
-    logoSrc: {
-        type: String,
-        default: '../src/assets/logo.png'
+export default {
+    name: 'Logo',
+    props: {
+        alt: {
+            type: String,
+            default: 'Logo'
+        },
+        width: {
+            type: String,
+            default: '100px'
+        },
+        height: {
+            type: String,
+            default: 'auto'
+        }
     }
-});
+}
+
 </script>
 
 <style scoped>
-.logo {
-    cursor: pointer;
+img {
+    display: block;
+    cursor: pointer ;
 }
 </style>

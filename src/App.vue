@@ -1,25 +1,22 @@
 <template>
-  <div class="App">
-    <Theheader />
-    <Home />
-    <footer/>
+  <div class="app">
+    <Home/>      
   </div>
 </template>
 
 <script>
-import Theheader from './components/Theheader.vue'
 import Home from './pages/Home.vue';
-import Footer from './components/Footer.vue';
+
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    Theheader,
-    Home,
-    Footer
+    Home
   }
 }
 
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

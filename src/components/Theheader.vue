@@ -1,7 +1,7 @@
 <template>
     <div class="theheader">
-        <div class="top">   
-            <Logo size="300px"/>
+        <div class="top"> 
+            <Logo src="../assets/TRIO02.JPEG" width="350px" height="auto"/> 
         </div>
         <div class="nav">
             <a v-for="(link, index) in links" :key="index" :href="`#${link.url}`">{{ link.text }}</a>
@@ -10,17 +10,25 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import Logo from './Logo.vue';
-
-const links = [
-    { text: 'QUEM SOMOS', url: 'quem-somos' },
-    { text: 'CULTOS', url: 'cultos' },
-    { text: 'DÍZIMOS E OFERTAS', url: 'dizimos-e-ofertas' },
-    { text: 'CURSOS', url: 'cursos' },
-    { text: 'CONTATO', url: 'contato' }
-];
-
+export default {
+    name: 'TheHeader',
+    components: {
+        Logo,
+    },
+    data() {
+        return {
+            links: [
+                { text: 'QUEM SOMOS', url: 'quem-somos' },
+                { text: 'CULTOS', url: 'cultos' },
+                { text: 'DÍZIMOS E OFERTAS', url: 'dizimos-e-ofertas' },
+                { text: 'CURSOS', url: 'cursos' },
+                { text: 'CONTATO', url: 'contato' }
+            ]
+        };
+    }
+};
 </script>
 
 <style scoped>
