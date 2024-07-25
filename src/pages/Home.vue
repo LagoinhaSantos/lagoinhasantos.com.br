@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Card altura="500px" largura="100%" background="../src/assets/trio02.jpg">
+    <Card altura="500px" largura="100%" background="../src/assets/trio2.jpg">
       <Logo size="1000px" />
       <img src="../assets/passaro.png">
     </Card>
