@@ -14,16 +14,11 @@ export default {
         },
         lagura: {
             type: String,
-            default: '500px'
+            default: '100px'
         }
     },
     computed: {
-        inputStyle() {
-            return {
-                height: this.altura,
-                width: this.largura
-            }
-        }
+
     }
 }
 

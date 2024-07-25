@@ -1,7 +1,6 @@
 <template>
   <div>
-    <Theheader />
-    <Card altura="500px" largura="100%" background="../src/assets/TRIO02.jpeg">
+    <Card altura="500px" largura="100%" class="bg" background="../src/assets/TRIO02.jpeg">
       <Logo size="1000px" />
       <img src="../assets/passaro.png">
     </Card>
@@ -128,7 +127,9 @@
       <h3>FALE CONOSCO</h3>
       <div class="formulario">
         <div class="form">
-
+          <Input />
+          <Input />
+          <Input />
         </div>
         <div class="contato">
           <div class="email">
@@ -145,15 +146,14 @@
 </template>
 
 <script>
-import Theheader from '../components/Theheader.vue';
 import Card from '../components/Card.vue';
 import Logo from '../components/Logo.vue';
 import Button from '../components/Button.vue';
+import Input from '../components/Input.vue';
 
 export default {
   name: 'Home',
   components: {
-    Theheader,
     Card,
     Logo,
     Button
@@ -178,6 +178,10 @@ export default {
   height: 100%;
   font-family: "Montserrat", sans-serif;
   color: white;
+}
+
+.bg {
+  background-color: url('../assets/criancas.png');
 }
 
 .content svg {
@@ -386,5 +390,17 @@ hr {
   color: #ffc8005a;
   font-size: 2rem;
   cursor: pointer;
+}
+
+.contato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: red;
+}
+
+.contato .formulario .form {
+  display: flex;
+  flex-direction: column;
 }
 </style>
