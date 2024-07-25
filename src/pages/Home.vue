@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Card altura="500px" largura="100%" background="../src/assets/trio2.jpg">
+    <Card altura="500px" largura="100%" background="../assets/trio2.jpg">
       <Logo size="1000px" />
       <img src="../assets/passaro.png">
     </Card>
     <div class="cards">
-      <Card altura="600px" largura="34%" background="../src/assets/SEJAMEMBRO.JPEG">
+      <Card altura="600px" largura="34%" background="../assets/SEJAMEMBRO.JPEG">
         <div class="content">
           <font-awesome-icon :icon="['fas', 'handshake']" />
           <h3>SEJA MEMBRO</h3>
