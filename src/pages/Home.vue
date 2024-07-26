@@ -2,11 +2,10 @@
   <div class="home">
     <Theheader />
     <div class="carrossel-container">
-      <Carrossel width="100%" height="80vh"
-        :images="['./public/assets/TRIO01.jpg', './public/assets/TRIO02.jpg', './public/assets/TRIO03.jpg']">
+      <Carrossel :width="'100%'" :height="'80vh'" :images="imageArray">
         <div class="img">
-          <img class="name" src="/public/assets/NAME.png" >
-          <img class="logo" src="/public/assets/LOGO.png" >
+          <img class="name" src="/public/assets/NAME.png" />
+          <img class="logo" src="/public/assets/LOGO.png" />
         </div>
       </Carrossel>
     </div>
@@ -22,6 +21,15 @@ export default {
   components: {
     Theheader,
     Carrossel
+  },
+  data() {
+    return {
+      imageArray: [
+        './public/assets/TRIO01.jpg',
+        './public/assets/TRIO02.jpg',
+        './public/assets/TRIO03.jpg'
+      ]
+    };
   }
 };
 </script>
@@ -43,7 +51,7 @@ export default {
   height: auto;
 }
 
-.img .logo{
+.img .logo {
   width: 10rem;
   height: auto;
 }
