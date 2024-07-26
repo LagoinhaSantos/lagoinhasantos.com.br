@@ -3,13 +3,13 @@
     <div class="carrossel-container">
       <Carrossel :width="''" :height="''" :images="imageArray">
         <div class="img">
-          <img class="name" src="/public/assets/NAME.png" />
-          <img class="logo" src="/public/assets/LOGO.png" />
+          <img class="name" src="/assets/NAME.png" />
+          <img class="logo" src="/assets/LOGO.png" />
         </div>
       </Carrossel>
     </div>
     <div class="cards">
-      <Card width="500px" height="470px" backgroundImage="/public/assets/SEJAMEMBRO.JPEG" :hasOverlay="true">
+      <Card width="500px" height="470px" backgroundImage="/assets/SEJAMEMBRO.JPEG" :hasOverlay="true">
         <div class="content">
           <font-awesome-icon :icon="['fas', 'handshake-simple']" />
           <h3>SEJA MEMBRO</h3>
@@ -18,7 +18,7 @@
           <Button class="button--primary">CONHECER</Button>
         </div>
       </Card>
-      <Card width="500px" height="470px" backgroundImage="/public/assets/GCSINICIO.jpg" :hasOverlay="true">
+      <Card width="500px" height="470px" backgroundImage="/assets/GCSINICIO.jpg" :hasOverlay="true">
         <div class="content">
           <font-awesome-icon :icon="['fas', 'house-chimney']" />
           <h3>GC’S</h3>
@@ -27,7 +27,7 @@
           <Button class="button--primary">VER MAIS</Button>
         </div>
       </Card>
-      <Card width="500px" height="470px" backgroundImage="/public/assets/BATISMO.jpeg" :hasOverlay="true">
+      <Card width="500px" height="470px" backgroundImage="/assets/BATISMO.jpeg" :hasOverlay="true">
         <div class="content">
           <font-awesome-icon :icon="['fas', 'water']" />
           <h3>BATISMO</h3>
@@ -38,7 +38,7 @@
       </Card>
     </div>
     <div class="voluntario">
-      <Card width="" height="470px" backgroundImage="/public/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
+      <Card width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
         :hasOverlay="true">
         <h3>VENHA FAZER PARTE DO NOSSO <br> TIME DE VOLUNTÁRIOS!</h3>
         <Button class="button--secondary">QUERO ME TORNA</Button>
@@ -60,7 +60,7 @@
           Lagoinha é Grande em Servir e Pequena em Importar-se.
           BEM-VINDO AO NOVO!
         </p>
-        <Card width="500px" height="470px" backgroundImage="/public/assets/CULTOS.JPG" />
+        <Card width="500px" height="470px" backgroundImage="/assets/CULTOS.JPG" />
       </div>
     </div>
     <div class="programacao">
@@ -90,7 +90,7 @@
             <Button class="button--Tertiary">CONHECER!</Button>
           </div>
         </Card>
-        <Card width="380px" height="380px" backgroundImage="/public/assets/QUEMSOMOS.JPG" :hasOverlay="true">
+        <Card width="380px" height="380px" backgroundImage="/assets/QUEMSOMOS.JPG" :hasOverlay="true">
           <div class="content mudanca">
             <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
               cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.
@@ -101,20 +101,20 @@
       </div>
     </div>
     <div class="canal">
-      <Card class="content" width="100%" height="380px" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="true">
+      <Card class="content" width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="true">
         <h3>CONHEÇA LAGOINHA <br>DE CASA</h3>
       </Card>
       <div class="tube">
-        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
       </div>
@@ -447,7 +447,7 @@ export default {
   justify-content: center;
   background-color: #F2F2F2;
   gap: 5rem;
-  padding: 3rem 0;
+  padding: 3rem ;
 }
 
 .fale h3 {
