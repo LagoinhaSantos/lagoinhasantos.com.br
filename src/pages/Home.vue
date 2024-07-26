@@ -3,7 +3,7 @@
     <Theheader />
     <div class="carrossel-container">
       <Carrossel width="100%" height="80vh"
-        :images="['/public/assets/TRIO01.jpg', '/public/assets/TRIO02.jpg', '/public/assets/TRIO03.jpg']">
+        :images="['./public/assets/TRIO01.jpg', './public/assets/TRIO02.jpg', './public/assets/TRIO03.jpg']">
         <div class="img">
           <img class="name" src="/public/assets/NAME.png" >
           <img class="logo" src="/public/assets/LOGO.png" >
