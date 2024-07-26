@@ -1,6 +1,6 @@
 <template>
     <div class="logo" >
-        <img src="../assets/NAME.png" :alt="alt" :style="{ width: width, height: height }">
+        <img src="/public/assets/NAME.png" :alt="alt" :style="{ width: width, height: height }">
     </div>
 </template>
 
