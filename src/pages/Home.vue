@@ -175,9 +175,9 @@ export default {
   data() {
     return {
       imageArray: [
-        'public/assets/TRIO01.jpg',
-        'public/assets/TRIO02.jpg',
-        'public/assets/TRIO03.jpg'
+        '/assets/TRIO01.jpg',
+        '/assets/TRIO02.jpg',
+        '/assets/TRIO03.jpg'
       ],
     };
   }
