@@ -56,8 +56,17 @@ export default {
 
 .button--Tertiary {
     font-weight: bold;
+    background-color: white;
     font-size: 1.1rem;
     border-radius: .5rem;
     padding: .3rem 0;
+}
+
+.button--fourth {
+    background-color: #000000;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: .5rem;
+    padding: .5rem 0;
 }
 </style>

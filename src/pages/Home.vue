@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <Theheader />
     <div class="carrossel-container">
       <Carrossel :width="''" :height="''" :images="imageArray">
         <div class="img">
@@ -102,14 +101,58 @@
       </div>
     </div>
     <div class="canal">
-      <Card width="100%" height="380px" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="true">
+      <Card class="content" width="100%" height="380px" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="true">
         <h3>CONHEÇA LAGOINHA <br>DE CASA</h3>
       </Card>
       <div class="tube">
-        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="true"><font-awesome-icon :icon="['far', 'circle-play']" /></Card>
-        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="true"><font-awesome-icon :icon="['far', 'circle-play']" /></Card>
-        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="true"><font-awesome-icon :icon="['far', 'circle-play']" /></Card>
-        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="true"><font-awesome-icon :icon="['far', 'circle-play']" /></Card>
+        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+          <font-awesome-icon :icon="['far', 'circle-play']" />
+        </Card>
+        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+          <font-awesome-icon :icon="['far', 'circle-play']" />
+        </Card>
+        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+          <font-awesome-icon :icon="['far', 'circle-play']" />
+        </Card>
+        <Card width="17rem" height="10rem" backgroundImage="/public/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+          <font-awesome-icon :icon="['far', 'circle-play']" />
+        </Card>
+      </div>
+      <Button class="button--fourth">VER MAIS CONTEUDO</Button>
+    </div>
+    <div class="fale">
+      <h3>FALE CONOSCO</h3>
+      <div class="content">
+        <form>
+          <Input v-model="inputValue" placeholder="Nome" size="medium" />
+          <Input v-model="inputValue" placeholder="Email" size="medium" />
+          <Input v-model="inputValue" placeholder="Whatsapp / Numero" size="medium" />
+          <Input v-model="inputValue" placeholder="Mensagem" size="medium" height="100px" />
+          <Button class="button--fourth">ENVIAR</Button>
+        </form>
+        <div class="contato">
+          <div class="text">
+            <font-awesome-icon :icon="['far', 'envelope']" />
+            <div class="name">
+              <h4>E-MAIL</h4>
+              <p>lagoinhasantos@gmail.com</p>
+            </div>
+          </div>
+          <div class="text">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div class="name">
+              <h4>WHATSAPP</h4>
+              <p>(13) 0000-0000</p>
+            </div>
+          </div>
+          <div class="text">
+            <font-awesome-icon :icon="['fas', 'location-dot']" />
+            <div class="name">
+              <h4>VISITE-NOS</h4>
+              <p>Rua. Carvalho de Mendonça 74 Santos</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -117,17 +160,17 @@
 
 <script>
 import Carrossel from '../components/Carrossel.vue';
-import Theheader from '../components/Theheader.vue';
 import Card from '../components/Card.vue'
 import Button from '../components/Button.vue';
+import Input from '../components/Input.vue';
 
 export default {
   name: 'home',
   components: {
-    Theheader,
     Carrossel,
     Card,
-    Button
+    Button,
+    Input,
   },
   data() {
     return {
@@ -277,9 +320,9 @@ export default {
   width: 100%;
   height: 80%;
   background-color: white;
-  padding: 2rem 0 8rem 0;
+  padding: 2rem 0 0 0;
   align-items: center;
-  
+
 }
 
 .programacao h3 {
@@ -336,23 +379,33 @@ export default {
 
 .programacao .days .content .button--Tertiary {
   position: absolute;
-  bottom: 0rem; 
-  left: 50%; 
+  bottom: 0rem;
+  left: 50%;
   transform: translateX(-50%);
-  margin: 0; 
+  margin: 0;
 }
 
 .canal {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  height: 100%;
   background-color: white;
+  padding: 3rem 0 0 0 ;
   position: relative;
 }
 
 .canal .card {
   display: flex;
   align-items: center;
+}
+
+.canal .button--fourth {
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  width: 400px;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .canal .card h3 {
@@ -368,16 +421,17 @@ export default {
   justify-content: center;
   gap: 2rem;
   position: absolute;
-  bottom: -5rem;
-  left: 50%; 
+  bottom: 9rem;
+  left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 100;
 }
 
 .canal .tube .card {
   display: flex;
   align-content: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .canal .tube svg {
@@ -385,4 +439,71 @@ export default {
   color: #FFC700;
   opacity: 20%;
 }
+
+.fale {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2F2F2;
+  gap: 5rem;
+  padding: 3rem 0;
+}
+
+.fale h3 {
+  font-size: 4.5rem;
+  margin-left: 2rem;
+  letter-spacing: 10px;
+  line-height: 1;
+}
+
+.fale .content {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
+.fale .content form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-weight: bold;
+}
+
+.fale .content form::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -45px;
+  width: 5px;
+  height: 100%;
+  border-radius: 20rem;
+  background: black;
+}
+
+.fale .content .contato {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.fale .content .text {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.2rem
+}
+
+.fale .content .text svg, i{
+  font-size: 3rem;
+  color: #FFC700;
+}
+
+.fale .button--fourth {
+  font-weight: bold;
+  width: 100%;
+}
+
 </style>
