@@ -47,21 +47,21 @@
         el.style.transform = 'scale(1.1)';
       },
       enter(el, done) {
-        el.offsetHeight; // trigger reflow
+        el.offsetHeight;
         el.style.transition = 'opacity 1.5s ease-in-out, transform 1.5s ease-in-out';
         el.style.opacity = 1;
         el.style.transform = 'scale(1)';
         done();
       },
       leave(el, done) {
-        el.style.transition = 'opacity 2s ease-in-out, transform 2s ease-in-out'; // Slow transition on leave
+        el.style.transition = 'opacity 10s ease-in-out, transform 10s ease-in-out';
         el.style.opacity = 0;
         el.style.transform = 'scale(1.1)';
         done();
       }
     },
     mounted() {
-      this.interval = setInterval(this.nextImage, 6000); // Change image every 6 seconds
+      this.interval = setInterval(this.nextImage, 4000); 
     },
     beforeDestroy() {
       clearInterval(this.interval);
