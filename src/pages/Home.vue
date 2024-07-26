@@ -5,6 +5,7 @@
       <Carrossel width="100%" height="80vh"
         :images="['../src/assets/TRIO01.jpg', '../src/assets/TRIO02.jpg', '../src/assets/TRIO03.jpg']">
         <div class="img">
+          <img class="name" src="../assets/name.png" >
           <img class="logo" src="../assets/logo.png" >
         </div>
       </Carrossel>
