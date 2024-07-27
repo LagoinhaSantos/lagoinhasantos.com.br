@@ -95,7 +95,7 @@
             <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
               cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.
             </p>
-            <Button class="button--Tertiary">ASSISTIR AOVIVO!</Button>
+            <Button class="button--Tertiary aovivo">ASSISTIR AOVIVO!</Button>
           </div>
         </Card>
       </div>

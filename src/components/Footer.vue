@@ -82,7 +82,7 @@ export default {
 
 .footer .logo img {
     width: 12rem;
-    height: 6rem;
+    height: 5rem;
 }
 
 .footer .content .maps {

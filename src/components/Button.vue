@@ -43,6 +43,12 @@ export default {
     font-weight: bold;
     font-size: 1.2rem;
     border: 0.5px solid white;
+    transition: all .5s ease;
+}
+
+.button--primary:hover {
+    color: black;
+    background-color: #fff;
 }
 
 .button--secondary {
@@ -52,6 +58,13 @@ export default {
     padding: .5rem 0;
     width: 27rem;
     border-radius: 2rem;
+    transition: all .5s ease;
+}
+
+.button--secondary:hover {
+    background-color: #ffc8006e;
+    color: white;
+
 }
 
 .button--Tertiary {
@@ -60,6 +73,17 @@ export default {
     font-size: 1.1rem;
     border-radius: .5rem;
     padding: .3rem 0;
+    transition: all .5s ease;
+}
+
+.button--Tertiary:hover {
+    color: white;
+    background-color: #000000;
+}
+
+.aovivo:hover {
+    background-color: #f90000;
+    color: white;
 }
 
 .button--fourth {
@@ -68,5 +92,11 @@ export default {
     font-size: 1.1rem;
     border-radius: .5rem;
     padding: .5rem 0;
+    transition: all .5s ease;
+}
+
+.button--fourth:hover {
+    background-color: #FFC700;
+    color: white;
 }
 </style>

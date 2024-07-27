@@ -1,7 +1,9 @@
 <template>
-    <div class="logo" >
-        <img src="/public/assets/NAME.png" :alt="alt" :style="{ width: width, height: height }">
-    </div>
+    <router-link to="/">
+        <div class="logo">
+            <img src="/public/assets/NAME.png" :alt="alt" :style="{ width: width, height: height }">
+        </div>
+    </router-link>
 </template>
 
 <script>
@@ -29,6 +31,6 @@ export default {
 <style scoped>
 img {
     display: block;
-    cursor: pointer ;
+    cursor: pointer;
 }
 </style>
