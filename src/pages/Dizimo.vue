@@ -85,6 +85,7 @@ export default {
     flex-direction: column;
     position: relative;
     align-items: center;
+    overflow: hidden;
 }
 
 .dizimo .card {
