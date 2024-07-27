@@ -4,17 +4,19 @@
             <div class="logo">
                 <img src="/public/assets/LOGOSANTOS.png" alt="logo">
                 <p>Seja bem-vindo à Lagoinha Santos! Esteja pronto <br> para ser impactado pela mensagem da Cruz.</p>
-                <p>Nosso foco é em servir a Deus e amar as <br> pessoas, entendendo que é assim que <br>cumprimos nosso
-                    propósito.</p>
+                <p>Nosso foco é em servir a Deus e amar as <br> pessoas, entendendo que é assim que <br>cumprimos nosso propósito.</p>
                 <p>Nós amamos, vivemos e servimos!</p>
                 <p>SEJA PARTE DO NOVO!</p>
             </div>
             <div class="redes">
-                <p>QUEM SOMOS</p>
-                <p>CULTOS</p>
-                <p>DÍZIMOS E OFERTAS</p>
-                <p>CURSOS</p>
-                <p>CONTATO</p>
+                <router-link
+                    v-for="(link, index) in links"
+                    :key="index"
+                    :to="`/${link.url}`"
+                    exact-active-class="active"
+                >
+                    <p>{{ link.text }}</p>
+                </router-link>
 
                 <div class="social">
                     <i class="fa-brands fa-whatsapp"></i>
@@ -35,16 +37,30 @@
 </template>
 
 <script>
-
 export default {
     name: 'Footer',
+    data() {
+        return {
+            links: [
+                { text: 'QUEM SOMOS', url: 'quem-somos' },
+                { text: 'CULTOS', url: 'cultos' },
+                { text: 'DÍZIMOS E OFERTAS', url: 'dizimos-e-ofertas' },
+                { text: 'CURSOS', url: 'cursos' },
+                { text: 'CONTATO', url: 'contato' }
+            ]
+        };
+    }
 }
-
 </script>
 
 <style scoped>
 .footer {
     padding: 2rem 3rem;
+    color: white;
+}
+
+a {
+    text-decoration: none;
     color: white;
 }
 
@@ -62,6 +78,11 @@ export default {
 
 .footer .content .redes p {
     cursor: pointer;
+    margin: 0;
+}
+
+.footer .content .redes .active p {
+    color: #FFC700; 
 }
 
 .footer .content .logo {
@@ -99,6 +120,6 @@ export default {
 
 .footer .direitos {
     margin-top: 2rem;
-    color: gray
+    color: gray;
 }
 </style>
