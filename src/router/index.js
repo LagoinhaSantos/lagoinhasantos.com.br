@@ -1,26 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import Home from '../pages/Home.vue';
+import QuemSomos from '../pages/QuemSomos.vue';
+import Cultos from '../pages/Cultos.vue';
 
 const routes = [
-    {
-        path: '/',
-        name: 'Home',
-        component: () => import('../pages/Home.vue')
-    },
-    {
-        path: '/quem-somos',
-        name: 'QuemSomos',
-        component: () => import('../pages/QuemSomos.vue')
-    },
-    {
-        path: '/cultos',
-        name: 'Cultos',
-        component: () => import('../pages/Cultos.vue')
-    },
+  { path: '/', name: 'Home', component: Home },
+  { path: '/QuemSomos', name: 'QuemSomos', component: QuemSomos },
+  { path: '/Cultos', name: 'Cultos', component: Cultos },
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes
+  history: createWebHistory(),
+  routes,
 });
 
 export default router;

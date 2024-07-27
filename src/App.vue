@@ -1,24 +1,23 @@
 <template>
   <div class="app">
-    <Theheader />
-    <RouterView />
-    <Footer/>
+    <TheHeader />
+    <router-view/>
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import Footer from '../src/components/Footer.vue';
-import Theheader from '../src/components/Theheader.vue';
+import TheFooter from './components/TheFooter.vue'
+import TheHeader from './components/Theheader.vue'
 
 export default {
   name: 'App',
   components: {
-    Footer,
-    Theheader
-  },
-};
+    TheFooter,
+    TheHeader
+  }
+}
 </script>
 
 <style scoped>
-
 </style>

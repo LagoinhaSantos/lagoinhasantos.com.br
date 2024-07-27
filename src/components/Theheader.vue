@@ -1,20 +1,18 @@
 <template>
-    <div class="theheader">
-        <div class="top">
-            <Logo src="../assets/TRIO02.JPEG" width="350px" height="auto" />
+    <header>
+        <div class="theheader">
+            <div class="top">
+                <Logo src="../assets/TRIO02.JPEG" width="350px" height="auto" />
+            </div>
+            <div class="nav">
+                <router-link v-for="(link, index) in links" :key="index" :to="`/${link.url}`"
+                    exact-active-class="active">
+                    {{ link.text }}
+                </router-link>
+            </div>
+            <i></i>
         </div>
-        <div class="nav">
-            <router-link
-                v-for="(link, index) in links"
-                :key="index"
-                :to="`/${link.url}`"
-                exact-active-class="active"
-            >
-                {{ link.text }}
-            </router-link>
-        </div>
-        <i></i>
-    </div>
+    </header>
 </template>
 
 <script>
@@ -28,8 +26,8 @@ export default {
     data() {
         return {
             links: [
-                { text: 'QUEM SOMOS', url: 'quem-somos' },
-                { text: 'CULTOS', url: 'cultos' },
+                { text: 'QUEM SOMOS', url: 'QuemSomos' },
+                { text: 'CULTOS', url: 'Cultos' },
                 { text: 'DÍZIMOS E OFERTAS', url: 'dizimos-e-ofertas' },
                 { text: 'CURSOS', url: 'cursos' },
                 { text: 'CONTATO', url: 'contato' }
