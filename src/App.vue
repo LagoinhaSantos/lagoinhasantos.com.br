@@ -23,7 +23,7 @@ export default {
 
     const isHomePage = computed(() => route.path === '/');
     const isQuemSomosPage = computed(() => route.path === '/quem-somos');
-    const isCultosPage = computed(() => route.path === '/Cultos');
+    const isCultosPage = computed(() => route.path === '/cultos');
 
     return {
       isHomePage,
