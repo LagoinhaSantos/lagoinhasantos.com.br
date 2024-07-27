@@ -8,7 +8,7 @@
         </div>
         <div class="somos">
             <div class="nos">
-                <h4>QUEM SOMOS</h4>
+                <h4>NOSSA HISTÓRIA</h4>
             </div>
             <div class="sobre">
                 <div class="text">
@@ -114,7 +114,7 @@ export default {
   content: '';
   border: 2px solid #FFC700;
   margin-left: -10rem;
-  width: 190%;
+  width: 170%;
 }
 
 .somos .nos::before {
@@ -125,7 +125,7 @@ export default {
   background-color: #FFC700;
   border-radius: 50%;
   top: 97%;
-  left: 120%;
+  left: 112%;
   transform: translate(-50%, -50%);
 }
 
