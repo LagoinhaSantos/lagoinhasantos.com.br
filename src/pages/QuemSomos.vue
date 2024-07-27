@@ -102,15 +102,12 @@ export default {
 
 .somos .nos {
   position: absolute;
+  display: flex;
+  flex-direction: column;
 }
 
 .somos .nos h4 {
   font-size: 2.5rem;
-}
-
-.somos .nos {
-  display: flex;
-  flex-direction: column;
 }
 
 .somos .nos::after {

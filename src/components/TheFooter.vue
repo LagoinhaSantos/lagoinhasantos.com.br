@@ -13,7 +13,7 @@
                 </div>
                 <div class="redes">
                     <router-link v-for="(link, index) in links" :key="index" :to="`/${link.url}`"
-                        exact-active-class="active">
+                        exact-active-class="active" @click.native="handleLinkClick(link.url, $event)">
                         <p>{{ link.text }}</p>
                     </router-link>
 
@@ -38,17 +38,56 @@
 
 <script>
 export default {
-    name: 'Thethefooter',
+    name: 'TheFooter',
     data() {
         return {
             links: [
                 { text: 'QUEM SOMOS', url: 'QuemSomos' },
                 { text: 'CULTOS', url: 'Cultos' },
-                { text: 'DÍZIMOS E OFERTAS', url: 'dizimos-e-ofertas' },
+                { text: 'DÍZIMOS E OFERTAS', url: 'Dizimo' },
                 { text: 'CURSOS', url: 'cursos' },
                 { text: 'CONTATO', url: 'contato' }
             ]
         };
+    },
+    methods: {
+        handleLinkClick(url, event) {
+            event.preventDefault(); 
+
+            this.scrollToTop(1000); 
+
+            this.$router.push({ path: `/${url}` });
+
+            this.$nextTick(() => {
+                const activeLink = document.querySelector('.redes a.active');
+                if (activeLink) {
+                    activeLink.classList.remove('active');
+                }
+
+                const clickedLink = document.querySelector(`.redes a[href*="${url}"]`);
+                if (clickedLink) {
+                    clickedLink.classList.add('active');
+                }
+            });
+        },
+        scrollToTop(duration) {
+            const start = window.scrollY;
+            const startTime = performance.now();
+
+            const step = (timestamp) => {
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeInOutQuad = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+                window.scrollTo(0, start - start * easeInOutQuad(progress));
+
+                if (elapsed < duration) {
+                    requestAnimationFrame(step);
+                }
+            };
+
+            requestAnimationFrame(step);
+        }
     }
 }
 </script>

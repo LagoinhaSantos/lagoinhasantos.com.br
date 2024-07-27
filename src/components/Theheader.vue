@@ -28,7 +28,7 @@ export default {
             links: [
                 { text: 'QUEM SOMOS', url: 'QuemSomos' },
                 { text: 'CULTOS', url: 'Cultos' },
-                { text: 'DÍZIMOS E OFERTAS', url: 'dizimos-e-ofertas' },
+                { text: 'DÍZIMOS E OFERTAS', url: 'Dizimo' },
                 { text: 'CURSOS', url: 'cursos' },
                 { text: 'CONTATO', url: 'contato' }
             ]
