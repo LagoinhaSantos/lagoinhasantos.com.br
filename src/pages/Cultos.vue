@@ -8,7 +8,6 @@
 
 export default {
     name: 'Cultos',
-    
 }
 </script>
 
