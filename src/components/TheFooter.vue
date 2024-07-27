@@ -45,7 +45,7 @@ export default {
                 { text: 'QUEM SOMOS', url: 'QuemSomos' },
                 { text: 'CULTOS', url: 'Cultos' },
                 { text: 'DÍZIMOS E OFERTAS', url: 'Dizimo' },
-                { text: 'CURSOS', url: 'cursos' },
+                { text: 'CURSOS', url: 'Cursos' },
                 { text: 'CONTATO', url: 'contato' }
             ]
         };
