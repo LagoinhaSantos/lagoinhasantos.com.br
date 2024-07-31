@@ -55,7 +55,7 @@ export default {
 <style scoped>
 .cursos {
     display: flex;
-    gap: 8rem;
+    gap: 9rem;
     flex-direction: column;
     align-items: center;
 }
