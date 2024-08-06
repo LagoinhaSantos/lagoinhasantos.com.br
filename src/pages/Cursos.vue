@@ -16,7 +16,7 @@
                     aprendizado da linguagem do amor e da inclusão.</p>
                 <p>CURSO DE LIBRAS: Segunda 20h, Quarta 18h, Sábado 10h</p>
                 <p>LOCALIZAÇÃO: Rua Carvalho de Mendonça, 74, Santos, SP, Brasil</p>
-                <Button>SAIBA MAIS</Button>
+                <Button class="button--fifty">SAIBA MAIS</Button>
             </div>
         </div>
         <div class="content">
@@ -29,7 +29,7 @@
                     aprendizado da linguagem do amor e da inclusão.</p>
                 <p>CURSO DE LIBRAS: Segunda 20h, Quarta 18h, Sábado 10h</p>
                 <p>LOCALIZAÇÃO: Rua Carvalho de Mendonça, 74, Santos, SP, Brasil</p>
-                <Button>SAIBA MAIS</Button>
+                <Button class="button--fifty">SAIBA MAIS</Button>
             </div>
             <div class="libras">
                 <Card width="300px" height="370px" backgroundImage="/assets/ESPANHOL.png" />
@@ -120,4 +120,12 @@ export default {
     align-items: end;
     text-align: end;
 }
+
+.content .tex h4 {
+    font-size: 4rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+}
+
+
 </style>

@@ -64,7 +64,6 @@ export default {
 .button--secondary:hover {
     background-color: #ffc8006e;
     color: white;
-
 }
 
 .button--Tertiary {
@@ -97,6 +96,21 @@ export default {
 
 .button--fourth:hover {
     background-color: #FFC700;
+    color: white;
+}
+
+.button--fifty {
+    background-color: #FFC700;
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding: .5rem 0;
+    width: 13rem;
+    border-radius: 2rem;
+    transition: all .5s ease;
+}
+
+ .button--fifty:hover {
+    background-color: #ffc8006e;
     color: white;
 }
 </style>
