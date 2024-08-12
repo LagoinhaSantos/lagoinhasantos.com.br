@@ -5,7 +5,7 @@
         </div>
         <div class="content">
             <div class="libras">
-                <Card width="300px" height="370px" backgroundImage="/assets/LIBRAS.png"/>
+                <Card width="400px" height="500px" backgroundImage="/assets/LIBRAS.png"/>
             </div>
             <div class="tex">
                 <h4>CURSO DE <br>
@@ -32,7 +32,7 @@
                 <Button class="button--fifty">SAIBA MAIS</Button>
             </div>
             <div class="libras">
-                <Card width="300px" height="370px" backgroundImage="/assets/ESPANHOL.png" />
+                <Card width="400px" height="500px" backgroundImage="/assets/ESPANHOL.png" />
             </div>  
         </div>
     </div>
@@ -55,9 +55,22 @@ export default {
 <style scoped>
 .cursos {
     display: flex;
-    gap: 9rem;
+    gap: 4rem;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.cursos::after {
+    content: '';
+    display: block;
+    width: 100vw;
+    border-top: 2px solid white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .cursos .top {
@@ -104,7 +117,9 @@ export default {
     display: flex;
     color: white;
     align-items: center;
-    gap: 3rem;
+    gap: 8rem;
+    overflow: hidden;
+
 }
 
 .content .tex {
@@ -126,6 +141,7 @@ export default {
     line-height: 1;
     letter-spacing: 0.1em;
 }
+
 
 
 </style>

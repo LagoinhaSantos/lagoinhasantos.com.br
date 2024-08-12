@@ -38,6 +38,7 @@ export default {
 .cultos {
     color: white;
     position: relative;
+    overflow: hidden;
 }
 
 .cultos::after {

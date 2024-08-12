@@ -132,6 +132,7 @@ export default {
 
 .somos .sobre {
     display: flex;
+    gap: 2rem;
     align-items: center;
 }
 
