@@ -1,5 +1,9 @@
 <template>
   <div class="home">
+    <div v-if="showOverlay" class="overlay">
+      <img class="logo_" src="/assets/LOGOPRETA.png" />
+    </div>
+
     <div class="carrossel-container">
       <Carrossel :width="''" :height="''" :images="imageArray">
         <div class="img">
@@ -38,8 +42,7 @@
       </Card>
     </div>
     <div class="voluntario">
-      <Card width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
-        :hasOverlay="true">
+      <Card width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG" :hasOverlay="true">
         <h3>VENHA FAZER PARTE DO NOSSO <br> TIME DE VOLUNTÁRIOS!</h3>
         <Button class="button--secondary">QUERO ME TORNA</Button>
       </Card>
@@ -49,17 +52,7 @@
         <h4>QUEM SOMOS</h4>
       </div>
       <div class="sobre">
-        <p>Somos uma igreja comprometida com um evangelho que se aproxima e não desiste das pessoas. Aqui, o pecado é
-          tratado com rigor, mas o pecador é acolhido com amor.
-          Somos um grupo de encorajadores. Deus nos instrui a segurar as mãos uns dos outros e dizer "vamos juntos até o
-          fim; ninguém será deixado para trás".
-          Somos uma igreja vibrante, evangelizadora e intercessora, enraizada na Palavra e dedicada à comunhão e ao
-          discipulado.
-          Nossa visão é conduzir cada pessoa a um relacionamento público e crescente com Jesus.
-          Como missão, buscamos alcançar 10% da nossa cidade para Lagoinha.
-          Lagoinha é Grande em Servir e Pequena em Importar-se.
-          BEM-VINDO AO NOVO!
-        </p>
+        <p>Somos uma igreja comprometida com um evangelho que se aproxima e não desiste das pessoas. Aqui, o pecado é tratado com rigor, mas o pecador é acolhido com amor. Somos um grupo de encorajadores. Deus nos instrui a segurar as mãos uns dos outros e dizer "vamos juntos até o fim; ninguém será deixado para trás". Somos uma igreja vibrante, evangelizadora e intercessora, enraizada na Palavra e dedicada à comunhão e ao discipulado. Nossa visão é conduzir cada pessoa a um relacionamento público e crescente com Jesus. Como missão, buscamos alcançar 10% da nossa cidade para Lagoinha. Lagoinha é Grande em Servir e Pequena em Importar-se. BEM-VINDO AO NOVO!</p>
         <Card width="500px" height="470px" backgroundImage="/assets/CULTOS.JPG" />
       </div>
     </div>
@@ -72,9 +65,7 @@
             <div class="calendario"><font-awesome-icon :icon="['fas', 'calendar-days']" />
               <p>10h30 | 16h | 18h | 20h</p>
             </div>
-            <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
-              cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.
-            </p>
+            <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4 cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.</p>
             <Button class="button--Tertiary">CONHECER!</Button>
           </div>
         </Card>
@@ -84,17 +75,13 @@
             <div class="calendario"><font-awesome-icon :icon="['fas', 'calendar-days']" />
               <p>QUARTA - 20h</p>
             </div>
-            <p>Por que esperar até domingo? Junte-se a nós no Culto Fé às terças-feiras! Estamos ansiosos para te ver
-              pessoalmente!
-            </p>
+            <p>Por que esperar até domingo? Junte-se a nós no Culto Fé às terças-feiras! Estamos ansiosos para te ver pessoalmente!</p>
             <Button class="button--Tertiary">CONHECER!</Button>
           </div>
         </Card>
         <Card width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPG" :hasOverlay="true">
           <div class="content mudanca">
-            <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
-              cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.
-            </p>
+            <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4 cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.</p>
             <Button class="button--Tertiary aovivo">ASSISTIR AOVIVO!</Button>
           </div>
         </Card>
@@ -160,17 +147,17 @@
 
 <script>
 import Carrossel from '../components/Carrossel.vue';
-import Card from '../components/Card.vue'
+import Card from '../components/Card.vue';
 import Button from '../components/Button.vue';
 import Input from '../components/Input.vue';
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     Carrossel,
     Card,
     Button,
-    Input,
+    Input
   },
   data() {
     return {
@@ -179,7 +166,13 @@ export default {
         '/assets/TRIO02.jpg',
         '/assets/TRIO03.jpg'
       ],
+      showOverlay: true,
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.showOverlay = false;
+    }, 3000); 
   }
 };
 </script>
@@ -187,6 +180,32 @@ export default {
 <style scoped>
 .home {
   overflow: hidden;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fed424;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+
+
+.overlay .logo_ {
+  width: 7rem;
+}
+
+.overlay.fade-out {
+  opacity: 0;
 }
 
 .carrossel-container {

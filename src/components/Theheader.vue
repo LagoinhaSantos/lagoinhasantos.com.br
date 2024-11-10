@@ -52,7 +52,7 @@
         ],
         menuOpen: false,
         isMobile: window.innerWidth < 900,
-        logoWidth: window.innerWidth < 900 ? '150px' : '350px',  // Largura inicial da logo
+        logoWidth: window.innerWidth < 900 ? '250px' : '350px',  // Largura inicial da logo
       };
     },
     methods: {
@@ -60,7 +60,7 @@
         this.menuOpen = !this.menuOpen;
       },
       updateLogoSize() {
-        this.logoWidth = window.innerWidth < 900 ? '150px' : '350px';
+        this.logoWidth = window.innerWidth < 900 ? '250px' : '350px';
         this.isMobile = window.innerWidth < 900;
       },
     },
