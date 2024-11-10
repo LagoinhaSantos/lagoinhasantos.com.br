@@ -9,7 +9,7 @@
       </Carrossel>
     </div>
     <div class="cards">
-      <Card width="500px" height="470px" backgroundImage="/assets/SEJAMEMBRO.JPEG" :hasOverlay="true">
+      <Card width="100%" height="470px" backgroundImage="/assets/SEJAMEMBRO.JPEG" :hasOverlay="true">
         <div class="content">
           <font-awesome-icon :icon="['fas', 'handshake-simple']" />
           <h3>SEJA MEMBRO</h3>
@@ -18,7 +18,7 @@
           <Button class="button--primary">CONHECER</Button>
         </div>
       </Card>
-      <Card width="500px" height="470px" backgroundImage="/assets/GCSINICIO.jpg" :hasOverlay="true">
+      <Card width="100%" height="470px" backgroundImage="/assets/GCSINICIO.jpg" :hasOverlay="true">
         <div class="content">
           <font-awesome-icon :icon="['fas', 'house-chimney']" />
           <h3>GC’S</h3>
@@ -27,7 +27,7 @@
           <Button class="button--primary">VER MAIS</Button>
         </div>
       </Card>
-      <Card width="500px" height="470px" backgroundImage="/assets/BATISMO.jpeg" :hasOverlay="true">
+      <Card width="100%" height="470px" backgroundImage="/assets/BATISMO.jpeg" :hasOverlay="true">
         <div class="content">
           <font-awesome-icon :icon="['fas', 'water']" />
           <h3>BATISMO</h3>
@@ -66,7 +66,7 @@
     <div class="programacao">
       <h3>NOSSA PROGRAMAÇÃO</h3>
       <div class="days">
-        <Card width="380px" height="380px" background="linear-gradient(to right, black, gray)">
+        <Card width="100%" height="380px" background="linear-gradient(to right, black, gray)">
           <div class="content">
             <h3>CULTO DE DOMINGO</h3>
             <div class="calendario"><font-awesome-icon :icon="['fas', 'calendar-days']" />
@@ -78,7 +78,7 @@
             <Button class="button--Tertiary">CONHECER!</Button>
           </div>
         </Card>
-        <Card width="380px" height="380px" background="linear-gradient(to right, black, gray)">
+        <Card width="100%" height="380px" background="linear-gradient(to right, black, gray)">
           <div class="content">
             <h3>CULTO DA FÉ</h3>
             <div class="calendario"><font-awesome-icon :icon="['fas', 'calendar-days']" />
@@ -90,7 +90,7 @@
             <Button class="button--Tertiary">CONHECER!</Button>
           </div>
         </Card>
-        <Card width="380px" height="380px" backgroundImage="/assets/QUEMSOMOS.JPG" :hasOverlay="true">
+        <Card width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPG" :hasOverlay="true">
           <div class="content mudanca">
             <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
               cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.
@@ -185,6 +185,10 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  overflow: hidden;
+}
+
 .carrossel-container {
   display: flex;
   align-items: center;
@@ -207,8 +211,11 @@ export default {
 }
 
 .cards {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: auto;
+  margin: 0;
 }
 
 .cards .card {
@@ -334,6 +341,7 @@ export default {
   display: flex;
   gap: 2rem;
   margin-top: 5rem;
+  padding: 0 2rem;
 }
 
 .programacao .days .card .calendario {
@@ -391,7 +399,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: white;
-  padding: 3rem 0 0 0 ;
+  padding: 3rem 0 0 0;
   position: relative;
 }
 
@@ -424,7 +432,7 @@ export default {
   bottom: 9rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100;
+  z-index: 10;
 }
 
 .canal .tube .card {
@@ -447,7 +455,7 @@ export default {
   justify-content: center;
   background-color: #F2F2F2;
   gap: 5rem;
-  padding: 3rem ;
+  padding: 3rem;
 }
 
 .fale h3 {
@@ -496,7 +504,8 @@ export default {
   font-size: 1.2rem
 }
 
-.fale .content .text svg, i{
+.fale .content .text svg,
+i {
   font-size: 3rem;
   color: #FFC700;
 }
@@ -506,4 +515,135 @@ export default {
   width: 100%;
 }
 
+@media (max-width: 1300px) {
+  .canal .tube {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .canal .tube .card:nth-child(4) {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+  .canal .tube {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column
+  }
+
+
+  .days {
+    display: flex;
+    flex-direction: column
+  }
+
+  .canal .tube .card:nth-child(3) {
+    display: none;
+  }
+
+  .canal .tube .card:nth-child(4) {
+    display: none;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .img .logo {
+    width: 5rem;
+    height: auto;
+  }
+
+  .img .name {
+  width: 20rem;
+  height: auto;
+}
+
+  .canal .tube {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .voluntario h3 {
+  font-size: 1rem;
+}
+
+.button--secondary {
+    background-color: #FFC700;
+    font-size: 1rem;
+    width: 15rem;
+}
+
+.somos .sobre{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.somos .nos h4 {
+  font-size: 2rem;
+}
+
+.somos .sobre p {
+  font-size: 1rem;
+  width: 90%;
+}
+
+.programacao h3 {
+  font-size: 2rem;
+  width: 90%;
+}
+
+.canal .card h3 {
+  font-size: 2rem;
+  width: 90%;
+}
+
+.canal .tube {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  left: 0;
+  margin: 1rem 0;
+  transform: translateX(0);
+  position: static;
+  z-index: 10;
+}
+
+.canal .button--fourth {
+  margin: 0
+}
+
+.fale {
+  margin: 0;
+}
+
+.fale h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.fale .content {
+  display: flex;
+  flex-direction: column-reverse; 
+}
+
+.fale .content form::after {
+    content: none;
+  }
+
+}
 </style>

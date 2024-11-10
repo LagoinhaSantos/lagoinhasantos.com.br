@@ -1,36 +1,88 @@
 <template>
     <div class="contato">
-        <Card width="100%" height="250px" backgroundImage="/assets/QUEMSOMOS1.png" :hasOverlay="true">
-            <h3>CONTATO</h3>
+        <Card width="100%" isCentered="true" height="250px" backgroundImage="/assets/QUEMSOMOS1.png" :hasOverlay="true">
+            <h3 class="title">CONTATO</h3>
         </Card>
-       
+        <div class="content">
+            <h2>DÚVIDAS OU PEDIDOS DE ORAÇÃO?</h2>
+            <p>Deixa aqui sua dúvida ou o motivo de oração e seus contatos. <br>
+                Assim que possível, leremos com carinho e incluiremos seus <br> pedidos nas orações oficiais da igreja.
+            </p>
+            <form>
+                <Input v-model="inputValue" size="large" height="3rem" />
+                <Input v-model="inputValue" size="large" height="3rem" />
+                <Input v-model="inputValue" size="large" height="3rem" />
+                <Input v-model="inputValue" size="large" height="10rem" />
+                <Button class="button--fifty">ENVIAR</Button>
+            </form>
+        </div>
     </div>
 </template>
 
 <script>
 import Card from '../components/Card.vue'
+import Input from '../components/Input.vue'
+import Button from '../components/Button.vue'
 
 export default {
     name: 'Contato',
     components: {
-        Card
+        Card,
+        Input,
+        Button
     }
 }
 </script>
 
 <style scoped>
-
-.card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.contato {
     position: relative;
-    font-size: 4rem;
     color: white;
-    letter-spacing: 10px;
+    width: 100%;
 }
 
+.title {
+    font-size: 4rem;
+    letter-spacing: 15px;
+    position: relative;
+    margin: 0;
+}
 
+.content {
+    margin: 4rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
+.content::after {
+    content: '';
+    display: block;
+    width: 100vw;
+    border-top: 2px solid white;
+    position: absolute;
+    bottom: -4rem;
+    left: 0;
+    z-index: 1;
+}
+
+.content h2 {
+    font-size: 1.7rem;
+}
+
+.content p {
+    margin: 1rem 0 4rem 0;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+form {
+    display: flex;
+    gap: 2.2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 </style>

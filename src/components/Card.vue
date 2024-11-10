@@ -1,7 +1,7 @@
 <template>
   <div class="card" :style="cardStyle">
     <div class="overlay" v-if="hasOverlay"></div>
-    <div class="content">
+    <div class="content" :class="{ centered: isCentered }">
       <slot></slot>
     </div>
   </div>
@@ -29,6 +29,10 @@ export default {
     hasOverlay: {
       type: Boolean,
       default: false
+    },
+    isCentered: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -47,7 +51,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 .card {
@@ -73,4 +76,10 @@ export default {
   color: white; 
 }
 
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+}
 </style>

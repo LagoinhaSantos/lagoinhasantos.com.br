@@ -161,4 +161,30 @@ a {
     margin-top: 2rem;
     color: gray;
 }
+
+@media (max-width: 900px) {
+    iframe {
+        width: 12rem;
+        height: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+    }
+
+    .thefooter .content .redes {
+        display: none;
+    }
+  }
 </style>
