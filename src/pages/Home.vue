@@ -468,7 +468,7 @@ export default {
 .fale .content {
   display: flex;
   gap: 5rem;
-  align-items: center;
+  align-items: center;n
 }
 
 .fale .content form {
