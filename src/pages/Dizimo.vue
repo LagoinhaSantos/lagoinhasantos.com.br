@@ -4,7 +4,7 @@
             <h3>DÍZIMOS E OFERTAS</h3>
         </div>
         <Card width="100%" height="250px" backgroundImage="/assets/QUEMSOMOS1.png" :hasOverlay="true">
-            <p>Faça sua contribuição através de uma das nossas contas <br> bancárias.</p>
+            <p>Faça sua contribuição através de uma das nossas contas bancárias.</p>
         </Card>
         <div class="bdy">
             <div class="banco"><font-awesome-icon :icon="['fab', 'pix']" />
@@ -19,9 +19,10 @@
             </div>
         </div>
         <div class="pix">
-            <p>DÍZIMOS E <br>
+            <p class="name_diferente">DÍZIMOS E <br>
                 OFERTAS</p>
-            <img src="/public/assets/PIX.png">
+            <img src="/public/assets/PIX.png" @click="copyToClipboard">
+            <span class="click">{{ copyStatus }}</span>
             <p>INVISTA EM <br>
                 UM NOVO !</p>
         </div>
@@ -35,6 +36,25 @@ export default {
     name: 'Dizimo',
     components: {
         Card
+    },
+    data() {
+        return {
+            copyStatus: 'CLICK NO QRCODE PARA COPIAR A CHAVE',
+            copyKey: '12345' 
+        };
+    },
+    methods: {
+        copyToClipboard() {
+            navigator.clipboard.writeText(this.copyKey).then(() => {
+                this.copyStatus = 'COPIADO!';
+                
+                setTimeout(() => {
+                    this.copyStatus = 'CLICK NO QRCODE PARA COPIAR A CHAVE';
+                }, 2000);
+            }).catch(err => {
+                console.error('Erro ao copiar para a área de transferência: ', err);
+            });
+        }
     }
 }
 </script>
@@ -49,6 +69,10 @@ export default {
     height: 150px;
 }
 
+.click {
+    display: none;
+}
+
 .top h3 {
     font-size: 4rem;
     line-height: 1;
@@ -57,27 +81,26 @@ export default {
     letter-spacing: 0.1em;
 }
 
-.top h3::before {
+.top h3::after {
     content: '';
+    border: 2px solid #FFC700;
+    width: 220%;
     position: absolute;
-    width: 336%;
-    border-top: 4px solid #FFC700;
-    border-radius: 10px;
+    left: -5%; 
+    transform: translateX(-50%);
     bottom: -1rem;
-    left: -100rem;
-    transform: translateY(-50%);
 }
 
-.top h3::after {
+.top h3::before {
     content: '';
     position: absolute;
     width: 12px;
     height: 12px;
     background-color: #FFC700;
     border-radius: 50%;
-    top: 110%;
-    left: 82%;
-    transform: translate(-50%, 0);
+    bottom: -1.6rem; 
+    right: -2.4rem;
+    transform: translateX(50%) translateY(-50%);
 }
 
 .dizimo {
@@ -131,6 +154,9 @@ export default {
     color: white;
 }
 
+.social h4 {
+    color: #FFC700;
+}
 
 .pix p {
     font-size: 4rem;
@@ -148,4 +174,71 @@ export default {
     left: 0;
 }
 
+@media (max-width: 500px) {
+    .top h3 {
+    font-size: 3rem;
+    line-height: 0.9;
+    position: relative;
+    padding: 0 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.top h3::after {
+    content: '';
+    border: 2px solid #FFC700;
+    width: 100%;
+    position: absolute;
+    left: -5%; 
+    transform: translateX(-50%);
+    bottom: -1rem;
+}
+
+.top h3::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #FFC700;
+    border-radius: 50%;
+    bottom: -1.6rem; 
+    right: 13rem;
+    transform: translateX(50%) translateY(-50%);
+}
+
+.dizimo .card p {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+}
+
+.bdy {
+    font-size: 1.5rem
+}
+
+.bdy .social p {
+    font-size: .8rem;
+}
+
+.pix {
+    margin: 2rem 0;
+    flex-direction: column;
+}
+
+.pix  img{
+    width: 8rem;
+}
+
+.name_diferente {
+    display: none;
+}
+
+.pix p {
+    font-size: 2.7rem;
+}            
+
+.click {
+    display: flex;
+    font-size: 1rem;
+    margin-top: -2rem;
+}
+}
 </style>

@@ -1,8 +1,16 @@
 <template>
   <div class="home">
-    <div v-if="showOverlay" class="overlay">
-      <img class="logo_" src="/assets/LOGOPRETA.png" />
-    </div>
+    <transition name="fade">
+      <div v-if="showOverlay" class="overlay">
+        <img class="logo_" src="/assets/LOGOPRETA.png" />
+        <div class="dots-container">
+          <div class="dot" :class="{ active: activeDot === 1 }"></div>
+          <div class="dot" :class="{ active: activeDot === 2 }"></div>
+          <div class="dot" :class="{ active: activeDot === 3 }"></div>
+          <div class="dot" :class="{ active: activeDot === 4 }"></div>
+        </div>
+      </div>
+    </transition>
 
     <div class="carrossel-container">
       <Carrossel :width="''" :height="''" :images="imageArray">
@@ -42,7 +50,8 @@
       </Card>
     </div>
     <div class="voluntario">
-      <Card width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG" :hasOverlay="true">
+      <Card width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
+        :hasOverlay="true">
         <h3>VENHA FAZER PARTE DO NOSSO <br> TIME DE VOLUNTÁRIOS!</h3>
         <Button class="button--secondary">QUERO ME TORNA</Button>
       </Card>
@@ -52,7 +61,13 @@
         <h4>QUEM SOMOS</h4>
       </div>
       <div class="sobre">
-        <p>Somos uma igreja comprometida com um evangelho que se aproxima e não desiste das pessoas. Aqui, o pecado é tratado com rigor, mas o pecador é acolhido com amor. Somos um grupo de encorajadores. Deus nos instrui a segurar as mãos uns dos outros e dizer "vamos juntos até o fim; ninguém será deixado para trás". Somos uma igreja vibrante, evangelizadora e intercessora, enraizada na Palavra e dedicada à comunhão e ao discipulado. Nossa visão é conduzir cada pessoa a um relacionamento público e crescente com Jesus. Como missão, buscamos alcançar 10% da nossa cidade para Lagoinha. Lagoinha é Grande em Servir e Pequena em Importar-se. BEM-VINDO AO NOVO!</p>
+        <p>Somos uma igreja comprometida com um evangelho que se aproxima e não desiste das pessoas. Aqui, o pecado é
+          tratado com rigor, mas o pecador é acolhido com amor. Somos um grupo de encorajadores. Deus nos instrui a
+          segurar as mãos uns dos outros e dizer "vamos juntos até o fim; ninguém será deixado para trás". Somos uma
+          igreja vibrante, evangelizadora e intercessora, enraizada na Palavra e dedicada à comunhão e ao discipulado.
+          Nossa visão é conduzir cada pessoa a um relacionamento público e crescente com Jesus. Como missão, buscamos
+          alcançar 10% da nossa cidade para Lagoinha. Lagoinha é Grande em Servir e Pequena em Importar-se. BEM-VINDO AO
+          NOVO!</p>
         <Card width="500px" height="470px" backgroundImage="/assets/CULTOS.JPG" />
       </div>
     </div>
@@ -65,7 +80,8 @@
             <div class="calendario"><font-awesome-icon :icon="['fas', 'calendar-days']" />
               <p>10h30 | 16h | 18h | 20h</p>
             </div>
-            <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4 cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.</p>
+            <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
+              cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.</p>
             <Button class="button--Tertiary">CONHECER!</Button>
           </div>
         </Card>
@@ -75,13 +91,15 @@
             <div class="calendario"><font-awesome-icon :icon="['fas', 'calendar-days']" />
               <p>QUARTA - 20h</p>
             </div>
-            <p>Por que esperar até domingo? Junte-se a nós no Culto Fé às terças-feiras! Estamos ansiosos para te ver pessoalmente!</p>
+            <p>Por que esperar até domingo? Junte-se a nós no Culto Fé às terças-feiras! Estamos ansiosos para te ver
+              pessoalmente!</p>
             <Button class="button--Tertiary">CONHECER!</Button>
           </div>
         </Card>
         <Card width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPG" :hasOverlay="true">
           <div class="content mudanca">
-            <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4 cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.</p>
+            <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
+              cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.</p>
             <Button class="button--Tertiary aovivo">ASSISTIR AOVIVO!</Button>
           </div>
         </Card>
@@ -167,13 +185,25 @@ export default {
         '/assets/TRIO03.jpg'
       ],
       showOverlay: true,
+      activeDot: 0
     };
   },
   mounted() {
     setTimeout(() => {
       this.showOverlay = false;
-    }, 3000); 
-  }
+    }, 3000);
+
+    this.animateDots();
+  },
+  methods: {
+    animateDots() {
+      let dotIndex = 0;
+      setInterval(() => {
+        dotIndex = (dotIndex + 1) % 4;
+        this.activeDot = dotIndex + 1;
+      }, 500);
+    },
+  },
 };
 </script>
 
@@ -196,6 +226,43 @@ export default {
   z-index: 1000;
   opacity: 1;
   transition: opacity 0.5s ease-out;
+}
+
+.overlay {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.overlay.fade-enter-active,
+.overlay.fade-leave-active {
+  transition: opacity 1s ease-in-out;
+}
+
+.overlay.fade-enter, 
+.overlay.fade-leave-to {
+  opacity: 0;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 5px;
+  opacity: 0.3;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+  opacity: 1;
+  transform: translateY(-5px);
 }
 
 
@@ -583,9 +650,9 @@ i {
   }
 
   .img .name {
-  width: 20rem;
-  height: auto;
-}
+    width: 20rem;
+    height: auto;
+  }
 
   .canal .tube {
     display: flex;
@@ -593,74 +660,74 @@ i {
   }
 
   .voluntario h3 {
-  font-size: 1rem;
-}
+    font-size: 1rem;
+  }
 
-.button--secondary {
+  .button--secondary {
     background-color: #FFC700;
     font-size: 1rem;
     width: 15rem;
-}
+  }
 
-.somos .sobre{
+  .somos .sobre {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     width: 100%;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.somos .nos h4 {
-  font-size: 2rem;
-}
+  .somos .nos h4 {
+    font-size: 2rem;
+  }
 
-.somos .sobre p {
-  font-size: 1rem;
-  width: 90%;
-}
+  .somos .sobre p {
+    font-size: 1rem;
+    width: 90%;
+  }
 
-.programacao h3 {
-  font-size: 2rem;
-  width: 90%;
-}
+  .programacao h3 {
+    font-size: 2rem;
+    width: 90%;
+  }
 
-.canal .card h3 {
-  font-size: 2rem;
-  width: 90%;
-}
+  .canal .card h3 {
+    font-size: 2rem;
+    width: 90%;
+  }
 
-.canal .tube {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  left: 0;
-  margin: 1rem 0;
-  transform: translateX(0);
-  position: static;
-  z-index: 10;
-}
+  .canal .tube {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    left: 0;
+    margin: 1rem 0;
+    transform: translateX(0);
+    position: static;
+    z-index: 10;
+  }
 
-.canal .button--fourth {
-  margin: 0
-}
+  .canal .button--fourth {
+    margin: 0
+  }
 
-.fale {
-  margin: 0;
-}
+  .fale {
+    margin: 0;
+  }
 
-.fale h3 {
-  font-size: 2rem;
-  margin: 0;
-}
+  .fale h3 {
+    font-size: 2rem;
+    margin: 0;
+  }
 
-.fale .content {
-  display: flex;
-  flex-direction: column-reverse; 
-}
+  .fale .content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 
-.fale .content form::after {
+  .fale .content form::after {
     content: none;
   }
 

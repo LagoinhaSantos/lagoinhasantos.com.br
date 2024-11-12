@@ -62,6 +62,7 @@ export default {
 <style scoped>
 .quemsomos {
     position: relative;
+    overflow: hidden;
 }
 
 .quemsomos::after {
@@ -101,34 +102,39 @@ export default {
 }
 
 .somos .nos {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    width: 100vw;
+    display: flex;
 }
 
 .somos .nos h4 {
-  font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5rem;
+    position: relative; 
 }
 
-.somos .nos::after {
-  content: '';
-  border: 2px solid #FFC700;
-  margin-left: -10rem;
-  width: 170%;
+.somos .nos h4::after {
+    content: '';
+    border: 2px solid #FFC700;
+    width: 130%;
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
+    bottom: 0; 
 }
 
-.somos .nos::before {
-  content: '';
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background-color: #FFC700;
-  border-radius: 50%;
-  top: 97%;
-  left: 112%;
-  transform: translate(-50%, -50%);
+.somos .nos h4::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #FFC700;
+    border-radius: 50%;
+    bottom: -0.6rem; 
+    right: -2.4rem;
+    transform: translateX(50%) translateY(-50%);
 }
-
 
 .somos .sobre {
     display: flex;
@@ -153,7 +159,29 @@ export default {
     flex: 1;
     gap: 1.5rem;
 }
+
+@media (max-width: 1300px) {
+
+}
+
+
+@media (max-width: 500px) {
+    .somos {
+    display: flex;
+    flex-direction: column;
+        gap: 2rem;
+}
+
+    .somos .nos h4 {
+        font-size: 2rem;
+    }
+
+    .somos .sobre {
+        flex-direction: column;
+    }
+
+    .somos .sobre .card p {
+        font-size: 1rem;
+    }
+}
 </style>
-
-
-

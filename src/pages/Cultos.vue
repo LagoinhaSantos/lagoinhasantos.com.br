@@ -3,7 +3,13 @@
         <div class="top">
             <h3>CULTOS</h3>
         </div>
-        <Card class="card" width="100%" height="140vh" backgroundImage="/assets/QUEMSOMOS1.png" :hasOverlay="true">
+        <Card 
+            class="card" 
+            width="100%" 
+            :height="cardHeight" 
+            backgroundImage="/assets/QUEMSOMOS1.png" 
+            :hasOverlay="true"
+        >
             <div class="content">
                 <p>"Nenhum membro de um corpo pode subsistir <br> sozinho, sem o resto do corpo." <br>
                     (1 Coríntios 12:21-22)</p>
@@ -30,8 +36,29 @@ export default {
     name: 'Cultos',
     components: {
         Card
+    },
+    data() {
+        return {
+            windowWidth: window.innerWidth
+        };
+    },
+    computed: {
+        cardHeight() {
+            return this.windowWidth <= 500 ? '80vh' : '140vh';
+        }
+    },
+    mounted() {
+        window.addEventListener('resize', this.updateWidth);
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.updateWidth);
+    },
+    methods: {
+        updateWidth() {
+            this.windowWidth = window.innerWidth;
+        }
     }
-}
+};
 </script>
 
 <style scoped>
@@ -131,5 +158,29 @@ export default {
     font-size: 2rem;
     font-weight: bold;
     gap: 1rem;
+}
+
+@media (max-width: 500px) {
+    .content p {
+        font-size: 1rem;
+        letter-spacing: .08rem;
+    }
+
+    .content {
+        gap: 4rem;
+    }
+
+    .cultos .card {
+        height: 100vh;
+    }
+
+    .content .dias h2 {
+        font-size: 2rem;
+    }
+
+    .content .dias p {
+        font-size: 1rem;
+    }
+
 }
 </style>
