@@ -1,11 +1,11 @@
 <template>
     <div class="cursos">
         <div class="top">
-            <h3>CURSOS</h3>
+            <h3>&nbsp;CURSOS</h3>
         </div>
         <div class="content">
             <div class="libras">
-                <Card width="400px" height="500px" backgroundImage="/assets/LIBRAS.png"/>
+                <Card :width="cardWidth" :height="cardHeight" backgroundImage="/assets/LIBRAS.png" />
             </div>
             <div class="tex">
                 <h4>CURSO DE <br>
@@ -32,11 +32,12 @@
                 <Button class="button--fifty">SAIBA MAIS</Button>
             </div>
             <div class="libras">
-                <Card width="400px" height="500px" backgroundImage="/assets/ESPANHOL.png" />
-            </div>  
+                <Card :width="cardWidth" :height="cardHeight" backgroundImage="/assets/ESPANHOL.png" />
+            </div>
         </div>
     </div>
 </template>
+
 
 <script>
 import Card from '../components/Card.vue'
@@ -47,10 +48,35 @@ export default {
     components: {
         Card,
         Button
+    },
+    data() {
+        return {
+            windowWidth: window.innerWidth
+        };
+    },
+    computed: {
+        cardHeight() {
+            return this.windowWidth <= 500 ? '17rem' : '500px';
+        },
+        cardWidth() {
+            return this.windowWidth <= 500 ? '17rem' : '400px';
+        }
+    },
+    mounted() {
+        window.addEventListener('resize', this.updateWidth);
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.updateWidth);
+    },
+    methods: {
+        updateWidth() {
+            this.windowWidth = window.innerWidth;
+        }
     }
 }
-
 </script>
+
+
 
 <style scoped>
 .cursos {
@@ -80,7 +106,6 @@ export default {
     width: 100%;
     color: white;
     height: 250px;
-
 }
 
 .cursos .top h3 {
@@ -119,7 +144,6 @@ export default {
     align-items: center;
     gap: 8rem;
     overflow: hidden;
-
 }
 
 .content .tex {
@@ -129,7 +153,6 @@ export default {
     width: 700px;
     font-size: 1.2rem;
 }
-
 
 .content .text {
     align-items: end;
@@ -142,6 +165,67 @@ export default {
     letter-spacing: 0.1em;
 }
 
+@media (max-width: 500px) {
 
+    .cursos .top {
+        display: flex;
+        height: 150px;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .cursos .top h3 {
+        font-size: 3rem;
+        letter-spacing: 15px;
+        position: relative;
+        margin: 0;
+    }
+
+    .cursos .top h3::after {
+        content: '';
+        position: absolute;
+        border: 2px solid #FFC700;
+        bottom: -2px;
+        left: 9rem;
+        width: 90%;
+        border-radius: 10px;
+        transform: translateX(-52%);
+    }
+
+    .cursos .top h3::before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background-color: #FFC700;
+        border-radius: 50%;
+        top: 91%;
+        left: 4%;
+        transform: translateX(-50%);
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .content:last-child {
+        flex-direction: column-reverse;
+        margin-bottom: 5rem;
+    }
+
+    .content .tex h4 {
+        font-size: 2rem;
+    }
+
+    .content .tex {
+        align-items: center;
+        text-align: center;
+        width: 93%;
+    }
+
+    .content .tex p {
+        font-size: .8rem;
+    }
+}
 </style>

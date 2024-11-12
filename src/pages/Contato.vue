@@ -9,10 +9,10 @@
                 Assim que possível, leremos com carinho e incluiremos seus <br> pedidos nas orações oficiais da igreja.
             </p>
             <form>
-                <Input v-model="inputValue" size="large" height="3rem" />
-                <Input v-model="inputValue" size="large" height="3rem" />
-                <Input v-model="inputValue" size="large" height="3rem" />
-                <Input v-model="inputValue" size="large" height="10rem" />
+                <Input v-model="inputValue" :size="inputSize" height="3rem" />
+                <Input v-model="inputValue" :size="inputSize" height="3rem" />
+                <Input v-model="inputValue" :size="inputSize" height="3rem" />
+                <Input v-model="inputValue" :size="inputSize" height="10rem" />
                 <Button class="button--fifty">ENVIAR</Button>
             </form>
         </div>
@@ -30,6 +30,34 @@ export default {
         Card,
         Input,
         Button
+    },
+    data() {
+        return {
+            inputValue: ''
+        }
+    },
+    computed: {
+        // Computed para determinar o tamanho do Input com base na largura da janela
+        inputSize() {
+            return this.windowWidth <= 500 ? 'medium' : 'large';
+        },
+        windowWidth() {
+            return window.innerWidth;
+        }
+    },
+    mounted() {
+        // Atualiza o tamanho do input quando a janela é redimensionada
+        window.addEventListener('resize', this.updateWidth);
+    },
+    destroyed() {
+        // Remover o listener quando o componente for destruído
+        window.removeEventListener('resize', this.updateWidth);
+    },
+    methods: {
+        // Método para atualizar o valor de windowWidth
+        updateWidth() {
+            this.windowWidth = window.innerWidth;
+        }
     }
 }
 </script>
@@ -39,6 +67,18 @@ export default {
     position: relative;
     color: white;
     width: 100%;
+    overflow: hidden;
+}
+
+.contato::after {
+    content: '';
+    display: block;
+    width: 100vw;
+    border-top: 2px solid white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .title {
@@ -84,5 +124,19 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 500px) {
+    .content {
+        text-align: center;
+    }
+
+    .content h2 {
+        font-size: 1.4rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
 }
 </style>

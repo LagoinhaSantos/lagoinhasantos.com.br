@@ -32,6 +32,7 @@
                 </div>
             </div>
             <p class="direitos">Lagoinha Santos - Todos os direitos reservados © 2024</p>
+            <p class="name">Site feito com muito amor | <a href="">Victor Lima</a>💙</p>
         </div>
     </footer>
 </template>
@@ -52,9 +53,9 @@ export default {
     },
     methods: {
         handleLinkClick(url, event) {
-            event.preventDefault(); 
+            event.preventDefault();
 
-            this.scrollToTop(1000); 
+            this.scrollToTop(1000);
 
             this.$router.push({ path: `/${url}` });
 
@@ -106,6 +107,15 @@ a {
 .thefooter .content {
     display: flex;
     justify-content: space-between;
+}
+
+.name {
+    color: gray;
+    font-size: small;
+}
+
+.name a {
+    text-decoration: underline;
 }
 
 .thefooter .content .redes {
@@ -163,13 +173,25 @@ a {
 }
 
 @media (max-width: 900px) {
+    .thefooter {
+        padding: 2rem 1rem;
+        color: white;
+    }
+
+    .thefooter .direitos, .name {
+        text-align: center;
+    }
+
+
     iframe {
-        width: 12rem;
+        width: 100%;
         height: auto;
+        margin-top: 2rem;
     }
 }
 
 @media (max-width: 500px) {
+    
     .content {
         display: flex;
         flex-direction: column;
@@ -186,5 +208,5 @@ a {
     .thefooter .content .redes {
         display: none;
     }
-  }
+}
 </style>
