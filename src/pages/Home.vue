@@ -50,7 +50,7 @@
       </Card>
     </div>
     <div class="voluntario">
-      <Card :isCentered="true" width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
+      <Card  width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
         :hasOverlay="true">
         <h3>VENHA FAZER PARTE DO NOSSO <br> TIME DE VOLUNTÁRIOS!</h3>
         <Button class="button--secondary">QUERO ME TORNA</Button>
@@ -332,6 +332,11 @@ export default {
   height: 22rem;
   margin-top: 5rem;
   position: relative;
+}
+
+.cards .content .centered{
+  display: flex;
+  flex-direction: column
 }
 
 .cards .content svg {
