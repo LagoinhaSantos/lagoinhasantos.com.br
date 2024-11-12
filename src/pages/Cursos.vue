@@ -8,8 +8,7 @@
                 <Card :width="cardWidth" :height="cardHeight" backgroundImage="/assets/LIBRAS.png" />
             </div>
             <div class="tex">
-                <h4>CURSO DE <br>
-                    LIBRAS</h4>
+                <h4>CURSO DE <br> LIBRAS</h4>
                 <p>Participe do curso de Libras na Lagoinha Santos e aprenda a Língua Brasileira de Sinais para promover
                     inclusão e comunicação eficaz com pessoas surdas. Descubra gestos, sinais e a cultura surda,
                     contribuindo para um ambiente mais inclusivo em nossa comunidade. Junte-se a nós nessa jornada de
@@ -21,8 +20,7 @@
         </div>
         <div class="content">
             <div class="tex text">
-                <h4>CURSO DE <br>
-                    LIBRAS</h4>
+                <h4>CURSO DE <br> LIBRAS</h4>
                 <p>Participe do curso de Libras na Lagoinha Santos e aprenda a Língua Brasileira de Sinais para promover
                     inclusão e comunicação eficaz com pessoas surdas. Descubra gestos, sinais e a cultura surda,
                     contribuindo para um ambiente mais inclusivo em nossa comunidade. Junte-se a nós nessa jornada de
@@ -37,7 +35,6 @@
         </div>
     </div>
 </template>
-
 
 <script>
 import Card from '../components/Card.vue'
@@ -65,7 +62,7 @@ export default {
     mounted() {
         window.addEventListener('resize', this.updateWidth);
     },
-    destroyed() {
+    beforeUnmount() {
         window.removeEventListener('resize', this.updateWidth);
     },
     methods: {
@@ -75,8 +72,6 @@ export default {
     }
 }
 </script>
-
-
 
 <style scoped>
 .cursos {

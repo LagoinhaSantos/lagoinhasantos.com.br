@@ -39,7 +39,7 @@ export default {
     },
     data() {
         return {
-            windowWidth: window.innerWidth
+            windowWidth: window.innerWidth,  // Armazena a largura da janela
         };
     },
     computed: {
@@ -48,12 +48,15 @@ export default {
         }
     },
     mounted() {
+        // Atualiza a largura da janela quando o componente for montado
         window.addEventListener('resize', this.updateWidth);
     },
-    destroyed() {
+    beforeUnmount() {
+        // Remover o listener quando o componente for destruído
         window.removeEventListener('resize', this.updateWidth);
     },
     methods: {
+        // Método para atualizar o valor de windowWidth
         updateWidth() {
             this.windowWidth = window.innerWidth;
         }
@@ -85,7 +88,6 @@ export default {
     justify-content: center;
     width: 100%;
     height: 250px;
-
 }
 
 .cultos .top h3 {
@@ -139,7 +141,7 @@ export default {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    font-size: 1.5rem
+    font-size: 1.5rem;
 }
 
 .content .dias h2 {
@@ -181,6 +183,5 @@ export default {
     .content .dias p {
         font-size: 1rem;
     }
-
 }
 </style>
