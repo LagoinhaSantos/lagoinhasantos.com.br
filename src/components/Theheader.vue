@@ -51,8 +51,8 @@ export default {
         { text: 'CONTATO', url: 'contato' },
       ],
       menuOpen: false,
-      isMobile: false, // Default state
-      logoWidth: '350px',  // Default logo width
+      isMobile: false, 
+      logoWidth: '350px',  
     };
   },
   methods: {
@@ -65,19 +65,15 @@ export default {
     },
   },
   watch: {
-    // Watch for route changes to re-evaluate layout
     '$route'(to, from) {
       this.updateLayout();
     },
   },
   mounted() {
-    // Call layout update on mount
     this.updateLayout();
-    // Add event listener for resize
     window.addEventListener('resize', this.updateLayout);
   },
   beforeDestroy() {
-    // Remove the event listener to avoid memory leaks
     window.removeEventListener('resize', this.updateLayout);
   },
 };
@@ -283,3 +279,4 @@ i {
   }
 }
 </style>
+ 

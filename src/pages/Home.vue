@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <transition name="fade">
-      <div v-if="showOverlay" class="overlay">
+      <div v-if="showOverlay && isMobile" class="overlay">
         <img class="logo_" src="/assets/LOGOPRETA.png" />
         <div class="dots-container">
           <div class="dot" :class="{ active: activeDot === 1 }"></div>
@@ -21,7 +21,7 @@
       </Carrossel>
     </div>
     <div class="cards">
-      <Card width="100%" height="470px" backgroundImage="/assets/SEJAMEMBRO.JPEG" :hasOverlay="true">
+      <Card :isCentered="true" width="100%" height="470px" backgroundImage="/assets/SEJAMEMBRO.JPEG" :hasOverlay="true">
         <div class="content">
           <font-awesome-icon :icon="['fas', 'handshake-simple']" />
           <h3>SEJA MEMBRO</h3>
@@ -30,7 +30,7 @@
           <Button class="button--primary">CONHECER</Button>
         </div>
       </Card>
-      <Card width="100%" height="470px" backgroundImage="/assets/GCSINICIO.jpg" :hasOverlay="true">
+      <Card :isCentered="true" width="100%" height="470px" backgroundImage="/assets/GCSINICIO.jpg" :hasOverlay="true">
         <div class="content">
           <font-awesome-icon :icon="['fas', 'house-chimney']" />
           <h3>GC’S</h3>
@@ -39,7 +39,7 @@
           <Button class="button--primary">VER MAIS</Button>
         </div>
       </Card>
-      <Card width="100%" height="470px" backgroundImage="/assets/BATISMO.jpeg" :hasOverlay="true">
+      <Card :isCentered="true" width="100%" height="470px" backgroundImage="/assets/BATISMO.jpeg" :hasOverlay="true">
         <div class="content">
           <font-awesome-icon :icon="['fas', 'water']" />
           <h3>BATISMO</h3>
@@ -50,7 +50,7 @@
       </Card>
     </div>
     <div class="voluntario">
-      <Card width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
+      <Card :isCentered="true" width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
         :hasOverlay="true">
         <h3>VENHA FAZER PARTE DO NOSSO <br> TIME DE VOLUNTÁRIOS!</h3>
         <Button class="button--secondary">QUERO ME TORNA</Button>
@@ -68,13 +68,13 @@
           Nossa visão é conduzir cada pessoa a um relacionamento público e crescente com Jesus. Como missão, buscamos
           alcançar 10% da nossa cidade para Lagoinha. Lagoinha é Grande em Servir e Pequena em Importar-se. BEM-VINDO AO
           NOVO!</p>
-        <Card width="500px" height="470px" backgroundImage="/assets/CULTOS.JPG" />
+        <Card :isCentered="true" width="500px" height="470px" backgroundImage="/assets/CULTOS.JPG" />
       </div>
     </div>
     <div class="programacao">
       <h3>NOSSA PROGRAMAÇÃO</h3>
       <div class="days">
-        <Card width="100%" height="380px" background="linear-gradient(to right, black, gray)">
+        <Card :isCentered="true" width="100%" height="380px" background="linear-gradient(to right, black, gray)">
           <div class="content">
             <h3>CULTO DE DOMINGO</h3>
             <div class="calendario"><font-awesome-icon :icon="['fas', 'calendar-days']" />
@@ -85,7 +85,7 @@
             <Button class="button--Tertiary">CONHECER!</Button>
           </div>
         </Card>
-        <Card width="100%" height="380px" background="linear-gradient(to right, black, gray)">
+        <Card :isCentered="true" width="100%" height="380px" background="linear-gradient(to right, black, gray)">
           <div class="content">
             <h3>CULTO DA FÉ</h3>
             <div class="calendario"><font-awesome-icon :icon="['fas', 'calendar-days']" />
@@ -96,7 +96,7 @@
             <Button class="button--Tertiary">CONHECER!</Button>
           </div>
         </Card>
-        <Card width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPG" :hasOverlay="true">
+        <Card :isCentered="true" width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPG" :hasOverlay="true">
           <div class="content mudanca">
             <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
               cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.</p>
@@ -106,11 +106,11 @@
       </div>
     </div>
     <div class="canal">
-      <Card class="content" width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="true">
+      <Card  :isCentered="true" class="content" width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="true">
         <h3>CONHEÇA LAGOINHA <br>DE CASA</h3>
       </Card>
       <div class="tube">
-        <Card width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+        <Card :isCentered="true" width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
         <Card width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
@@ -204,8 +204,21 @@ export default {
       }, 500);
     },
   },
+  computed: {
+    isMobile() {
+      return window.innerWidth < 500;
+    }
+  },
+  watch: {
+    '$route'() {
+      this.$nextTick(() => {
+        this.isMobile; 
+      });
+    }
+  }
 };
 </script>
+
 
 <style scoped>
 .home {
@@ -223,7 +236,7 @@ export default {
   width: 100vw;
   height: 100vh;
   background-color: #fed424;
-  z-index: 1000;
+  z-index: 99999;
   opacity: 1;
   transition: opacity 0.5s ease-out;
 }

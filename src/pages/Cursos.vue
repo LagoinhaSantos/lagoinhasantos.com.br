@@ -129,7 +129,7 @@ export default {
     background-color: #FFC700;
     border-radius: 50%;
     top: 94%;
-    left: -10%;
+    left: -16%;
     transform: translateX(-50%);
 }
 

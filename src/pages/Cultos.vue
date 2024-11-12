@@ -39,7 +39,7 @@ export default {
     },
     data() {
         return {
-            windowWidth: window.innerWidth,  // Armazena a largura da janela
+            windowWidth: window.innerWidth,  
         };
     },
     computed: {
@@ -48,15 +48,12 @@ export default {
         }
     },
     mounted() {
-        // Atualiza a largura da janela quando o componente for montado
         window.addEventListener('resize', this.updateWidth);
     },
     beforeUnmount() {
-        // Remover o listener quando o componente for destruído
         window.removeEventListener('resize', this.updateWidth);
     },
     methods: {
-        // Método para atualizar o valor de windowWidth
         updateWidth() {
             this.windowWidth = window.innerWidth;
         }
