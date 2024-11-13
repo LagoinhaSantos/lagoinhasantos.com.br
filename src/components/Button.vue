@@ -35,6 +35,7 @@ export default {
     padding: 0.3rem 0rem;
     width: 10rem;
     transition: background-color 0.3s;
+    text-decoration: none;
 }
 
 .button--primary {
