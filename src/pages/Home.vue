@@ -27,7 +27,7 @@
           <h3>SEJA MEMBRO</h3>
           <p>Está interessado em <br> se tornar membro da <br> Lagoinha Santos?</p>
 
-          <Button class="button--primary">CONHECER</Button>
+          <Button  @click="irParaWhatsApp" class="button--primary">CONHECER</Button>
         </div>
       </Card>
       <Card :isCentered="true" width="100%" height="470px" backgroundImage="/assets/GCSINICIO.jpg" :hasOverlay="true">
@@ -36,7 +36,7 @@
           <h3>GC’S</h3>
           <p>Descubra o seu grupo <br> de crescimento (GC): <br> encontre o lugar <br> certo para você!</p>
 
-          <Button class="button--primary">VER MAIS</Button>
+          <Button  @click="irParaWhatsApp" class="button--primary">VER MAIS</Button>
         </div>
       </Card>
       <Card :isCentered="true" width="100%" height="470px" backgroundImage="/assets/BATISMO.jpeg" :hasOverlay="true">
@@ -45,7 +45,7 @@
           <h3>BATISMO</h3>
           <p>Quer se batizar?</p>
 
-          <Button class="button--primary">QUERO</Button>
+          <Button  @click="irParaWhatsApp" class="button--primary">QUERO</Button>
         </div>
       </Card>
     </div>
@@ -53,7 +53,7 @@
       <Card  width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
         :hasOverlay="true">
         <h3>VENHA FAZER PARTE DO NOSSO <br> TIME DE VOLUNTÁRIOS!</h3>
-        <Button class="button--secondary">QUERO ME TORNA</Button>
+        <Button  @click="irParaWhatsApp" class="button--secondary">QUERO ME TORNA</Button>
       </Card>
     </div>
     <div class="somos">
@@ -100,7 +100,7 @@
           <div class="content mudanca">
             <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
               cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.</p>
-            <Button class="button--Tertiary aovivo">ASSISTIR AOVIVO!</Button>
+            <Button class="button--Tertiary aovivo"  @click="irParaYouTube" >ASSISTIR AOVIVO!</Button>
           </div>
         </Card>
       </div>
@@ -123,7 +123,7 @@
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
       </div>
-      <Button class="button--fourth">VER MAIS CONTEUDO</Button>
+      <Button class="button--fourth"  @click="irParaYouTube">VER MAIS CONTEUDO</Button>
     </div>
     <div class="fale">
       <h3>FALE CONOSCO</h3>
@@ -147,14 +147,14 @@
             <i class="fa-brands fa-whatsapp"></i>
             <div class="name">
               <h4>WHATSAPP</h4>
-              <p>(13) 0000-0000</p>
+              <p>(13) 99666-8900</p>
             </div>
           </div>
           <div class="text">
             <font-awesome-icon :icon="['fas', 'location-dot']" />
             <div class="name">
               <h4>VISITE-NOS</h4>
-              <p>Rua. Carvalho de Mendonça 74 Santos</p>
+              <p>Av. Visconde de São Leopoldo -653</p>
             </div>
           </div>
         </div>
@@ -203,6 +203,12 @@ export default {
         this.activeDot = dotIndex + 1;
       }, 500);
     },
+    irParaWhatsApp() {
+      window.location.href = 'https://wa.me/13996668900';
+    },
+    irParaYouTube() {
+      window.location.href = 'https://www.youtube.com/@lagoinhasantos';
+    }
   },
   computed: {
     isMobile() {
@@ -300,7 +306,7 @@ export default {
 }
 
 .img .name {
-  width: 70rem;
+  width: 90vw;
   height: auto;
 }
 
@@ -510,6 +516,7 @@ export default {
 .canal .card {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .canal .button--fourth {
@@ -640,9 +647,30 @@ i {
     gap: 2rem;
   }
 
+  .canal .card h3 {
+    font-size: 3rem;
+  }
+
+  .programacao h3 {
+        font-size: 2rem;
+    }
+
   .cards {
     display: flex;
     flex-direction: column
+  }
+
+  .voluntario h3 {
+    font-size: 2rem;
+  }
+
+  .somos .sobre {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 
 
@@ -685,15 +713,6 @@ i {
     background-color: #FFC700;
     font-size: 1rem;
     width: 15rem;
-  }
-
-  .somos .sobre {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
   }
 
   .somos .nos h4 {

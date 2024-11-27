@@ -22,10 +22,10 @@
                         <i class="fa-brands fa-instagram"></i>
                         <i class="fa-brands fa-facebook"></i>
                     </div>
-                </div>
+                </div> 
                 <div class="maps">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.2613971826486!2d-46.329050525405854!3d-23.95119507602847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce03eaa0927381%3A0x9d53e12e248c8e4!2sIgreja%20Batista%20da%20Lagoinha%20Santos!5e0!3m2!1spt-BR!2sbr!4v1722006739613!5m2!1spt-BR!2sbr"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.7980892305827!2d-46.339522224577095!3d-23.932202875321234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce049bb0dcec47%3A0x72643a850eb39a9!2sAv.%20Visconde%20de%20S%C3%A3o%20Leopoldo%2C%20653%20-%20Centro%2C%20Santos%20-%20SP%2C%2011010-201!5e0!3m2!1spt-BR!2sbr!4v1732688938965!5m2!1spt-BR!2sbr"
                         width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <p>Política de Privacidade</p>
@@ -178,7 +178,8 @@ a {
         color: white;
     }
 
-    .thefooter .direitos, .name {
+    .thefooter .direitos,
+    .name {
         text-align: center;
     }
 
@@ -191,7 +192,7 @@ a {
 }
 
 @media (max-width: 500px) {
-    
+
     .content {
         display: flex;
         flex-direction: column;
