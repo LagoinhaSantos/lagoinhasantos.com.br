@@ -33,6 +33,10 @@ export default {
     isCentered: {
       type: Boolean,
       default: false
+    },
+    backgroundPosition: {
+      type: String,
+      default: 'center' 
     }
   },
   computed: {
@@ -45,12 +49,14 @@ export default {
         width: this.width,
         height: this.height,
         background: backgroundStyle,
-        backgroundSize: this.backgroundImage ? 'cover' : 'auto'
+        backgroundSize: this.backgroundImage ? 'cover' : 'auto',
+        backgroundPosition: this.backgroundPosition
       };
     }
   }
 }
 </script>
+
 
 <style scoped>
 .card {
@@ -58,6 +64,7 @@ export default {
   align-items: center;
   overflow: hidden;
   background-size: cover;
+  background-position: center; 
 }
 
 .overlay {

@@ -7,7 +7,7 @@
             class="card" 
             width="100%" 
             :height="cardHeight" 
-            backgroundImage="/assets/QUEMSOMOS1.png" 
+            backgroundImage="/assets/IMG_1988.JPG" 
             :hasOverlay="true"
         >
             <div class="content">

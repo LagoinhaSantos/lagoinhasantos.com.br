@@ -3,7 +3,7 @@
         <div class="top">
             <h3>DÍZIMOS E OFERTAS</h3>
         </div>
-        <Card width="100%" height="250px" backgroundImage="/assets/QUEMSOMOS1.png" :hasOverlay="true">
+        <Card width="100%" height="250px" backgroundImage="/assets/IMG_2021.JPG" :hasOverlay="true">
             <p>Faça sua contribuição através de uma das nossas contas bancárias.</p>
         </Card>
         <div class="bdy">

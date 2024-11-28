@@ -68,7 +68,7 @@
           Nossa visão é conduzir cada pessoa a um relacionamento público e crescente com Jesus. Como missão, buscamos
           alcançar 10% da nossa cidade para Lagoinha. Lagoinha é Grande em Servir e Pequena em Importar-se. BEM-VINDO AO
           NOVO!</p>
-        <Card :isCentered="true" width="500px" height="470px" backgroundImage="/assets/CULTOS.JPG" />
+        <Card :isCentered="true" width="500px" height="470px" backgroundImage="/assets/3.jpg" />
       </div>
     </div>
     <div class="programacao">
@@ -110,16 +110,16 @@
         <h3>CONHEÇA LAGOINHA <br>DE CASA</h3>
       </Card>
       <div class="tube">
-        <Card :isCentered="true" width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+        <Card :isCentered="true" width="17rem" height="10rem" backgroundImage="/assets/youtube1.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=VWqPiyvHTGE')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube2.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube3.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="false">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube4.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
       </div>
@@ -181,8 +181,8 @@ export default {
     return {
       imageArray: [
         '/assets/TRIO01.jpg',
-        '/assets/TRIO02.jpg',
-        '/assets/TRIO03.jpg'
+        '/assets/IMG_3920.JPG',
+        '/assets/IMG_6585.JPG'
       ],
       showOverlay: true,
       activeDot: 0
@@ -204,10 +204,10 @@ export default {
       }, 500);
     },
     irParaWhatsApp() {
-      window.location.href = 'https://wa.me/13996668900';
+      window.location.href = 'https://wa.me/13996668900', '_blank';
     },
     irParaYouTube() {
-      window.location.href = 'https://www.youtube.com/@lagoinhasantos';
+      window.location.href = 'https://www.youtube.com/@lagoinhasantos', '_blank';
     }
   },
   computed: {

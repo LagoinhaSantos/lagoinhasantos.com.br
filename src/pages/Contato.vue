@@ -1,6 +1,6 @@
 <template>
     <div class="contato">
-      <Card width="100%" :isCentered="true" height="250px" backgroundImage="/assets/QUEMSOMOS1.png" :hasOverlay="true">
+      <Card width="100%" :isCentered="true" height="250px" backgroundImage="/assets/FPM_5746.jpg" :hasOverlay="true">
         <h3 class="title">CONTATO</h3>
       </Card>
       <div class="content">
