@@ -1,7 +1,7 @@
 <template>
     <div class="quemsomos">
         <div class="top">
-            <Card width="500px" height="250px" backgroundImage="/assets/QUEMSOMOS1.png" :hasOverlay="true"></Card>
+            <Card width="500px" height="250px" backgroundImage="/assets/QUEMSOMOS1.png" :hasOverlay="true" backgroundPosition="cover"></Card>
             <Card width="500px" height="250px" backgroundImage="/assets/QUEMSOMOS2.png" :hasOverlay="true"></Card>
             <Card width="500px" height="250px" backgroundImage="/assets/QUEMSOMOS3.png" :hasOverlay="true"></Card>
             <h3>QUEM SOMOS</h3>

@@ -110,16 +110,16 @@
         <h3>CONHEÇA LAGOINHA <br>DE CASA</h3>
       </Card>
       <div class="tube">
-        <Card :isCentered="true" width="17rem" height="10rem" backgroundImage="/assets/youtube1.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=VWqPiyvHTGE')">
+        <Card :isCentered="true" width="17rem" height="10rem" backgroundImage="/assets/youtube1.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=VWqPiyvHTGE', '_blank')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube2.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4')">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube2.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4', '_blank')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube3.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4')">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube3.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4', '_blank' )">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube4.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4')">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube4.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4', '_blank')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
       </div>
