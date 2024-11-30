@@ -7,14 +7,14 @@ import Cursos from '../pages/Cursos.vue';
 import Contato from '../pages/Contato.vue';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL), 
+  mode: "hash", 
   routes: [
     { path: '/', name: 'Home', component: Home },
-    { path: '/QuemSomos', name: 'QuemSomos', component: QuemSomos },
-    { path: '/Cultos', name: 'Cultos', component: Cultos },
-    { path: '/Dizimo', name: 'Dizimo', component: Dizimo },
-    { path: '/Cursos', name: 'Cursos', component: Cursos },
-    { path: '/Contato', name: 'Contato', component: Contato },
+    { path: '/quemSomos', name: 'QuemSomos', component: QuemSomos },
+    { path: '/cultos', name: 'Cultos', component: Cultos },
+    { path: '/dizimo', name: 'Dizimo', component: Dizimo },
+    { path: '/cursos', name: 'Cursos', component: Cursos },
+    { path: '/contato', name: 'Contato', component: Contato },
   ],
 });
 
