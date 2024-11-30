@@ -6,6 +6,7 @@ import Cultos from '../pages/Cultos.vue';
 import Dizimo from '../pages/Dizimo.vue';
 import Cursos from '../pages/Cursos.vue';
 import Contato from '../pages/Contato.vue';
+import Privacidade from '../pages/Privacidade.vue';
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
@@ -14,10 +15,11 @@ const routes = [
   { path: '/dizimo', name: 'Dizimo', component: Dizimo },
   { path: '/cursos', name: 'Cursos', component: Cursos },
   { path: '/contato', name: 'Contato', component: Contato },
+  { path: '/privacidade', name: 'Privacidade', component: Privacidade }
 ];
 
 const router = createRouter({
-  history: createWebHistory(), // Use createWebHistory for history mode
+  history: createWebHistory(),
   routes
 });
 

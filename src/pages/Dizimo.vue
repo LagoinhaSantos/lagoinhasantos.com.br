@@ -232,7 +232,7 @@ export default {
 }
 
 .pix p {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
 }            
 
 .click {
@@ -240,5 +240,14 @@ export default {
     font-size: 1rem;
     margin-top: -2rem;
 }
+}
+
+@media (max-width: 981px) {
+    .pix  img{
+    width: 8rem;
+}
+    .pix p {
+        font-size: 3rem;
+    }
 }
 </style>

@@ -30,7 +30,7 @@
                 <Button class="button--fifty">SAIBA MAIS</Button>
             </div>
             <div class="libras">
-                <Card :width="cardWidth" :height="cardHeight" backgroundImage="/assets/ESPANHOL.png" />
+                <Card :width="cardWidth" :height="cardHeight" backgroundImage="/assets/espanhol.jpg" />
             </div>
         </div>
     </div>
@@ -158,6 +158,33 @@ export default {
     font-size: 4rem;
     line-height: 1;
     letter-spacing: 0.1em;
+}
+
+@media (max-width: 1250px) {
+    .content .tex h4 {
+        font-size: 3rem;
+    }
+
+    .content .tex {
+        width: 30rem;
+
+    }
+    
+
+    .content .tex p {
+        font-size: 1rem;
+    }
+    
+    .content {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .content .tex {
+        width: 17rem;
+
+    }
 }
 
 @media (max-width: 500px) {

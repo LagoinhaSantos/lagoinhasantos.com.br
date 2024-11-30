@@ -160,8 +160,14 @@ export default {
     gap: 1.5rem;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 850px) {
+    .somos .sobre {
+        flex-direction: column;
+    }
 
+    .somos .nos {
+        margin-bottom: 1rem
+    }
 }
 
 
@@ -176,9 +182,7 @@ export default {
         font-size: 2rem;
     }
 
-    .somos .sobre {
-        flex-direction: column;
-    }
+   
 
     .somos .sobre .card p {
         font-size: 1rem;

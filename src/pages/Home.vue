@@ -2,7 +2,7 @@
   <div class="home">
     <transition name="fade">
       <div v-if="showOverlay && isMobile" class="overlay">
-        <img class="logo_" src="/assets/LOGOPRETA.png" />
+        <img class="logo_" src="/assets/LOGOPRETA.png"/>
         <div class="dots-container">
           <div class="dot" :class="{ active: activeDot === 1 }"></div>
           <div class="dot" :class="{ active: activeDot === 2 }"></div>
@@ -13,7 +13,7 @@
     </transition>
 
     <div class="carrossel-container">
-      <Carrossel :width="''" :height="''" :images="imageArray">
+      <Carrossel :width="''" :height="'30rem'" :images="imageArray">
         <div class="img">
           <img class="name" src="/assets/NAME.png" />
           <img class="logo" src="/assets/LOGO.png" />
@@ -21,13 +21,13 @@
       </Carrossel>
     </div>
     <div class="cards">
-      <Card :isCentered="true" width="100%" height="470px" backgroundImage="/assets/SEJAMEMBRO.JPEG" :hasOverlay="true">
+      <Card :isCentered="true" width="100%" height="470px" backgroundImage="/assets/SEJAMEMBRO.JPEG" :hasOverlay="true" >
         <div class="content">
           <font-awesome-icon :icon="['fas', 'handshake-simple']" />
           <h3>SEJA MEMBRO</h3>
           <p>Está interessado em <br> se tornar membro da <br> Lagoinha Santos?</p>
 
-          <Button  @click="irParaWhatsApp" class="button--primary">CONHECER</Button>
+          <Button @click="irParaWhatsApp" class="button--primary">CONHECER</Button>
         </div>
       </Card>
       <Card :isCentered="true" width="100%" height="470px" backgroundImage="/assets/GCSINICIO.jpg" :hasOverlay="true">
@@ -36,7 +36,7 @@
           <h3>GC’S</h3>
           <p>Descubra o seu grupo <br> de crescimento (GC): <br> encontre o lugar <br> certo para você!</p>
 
-          <Button  @click="irParaWhatsApp" class="button--primary">VER MAIS</Button>
+          <Button @click="irParaWhatsApp" class="button--primary">VER MAIS</Button>
         </div>
       </Card>
       <Card :isCentered="true" width="100%" height="470px" backgroundImage="/assets/BATISMO.jpeg" :hasOverlay="true">
@@ -45,15 +45,15 @@
           <h3>BATISMO</h3>
           <p>Quer se batizar?</p>
 
-          <Button  @click="irParaWhatsApp" class="button--primary">QUERO</Button>
+          <Button @click="irParaWhatsApp" class="button--primary">QUERO</Button>
         </div>
       </Card>
     </div>
     <div class="voluntario">
-      <Card  width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
-        :hasOverlay="true">
+      <Card width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
+        :hasOverlay="true" backgroundPosition="auto">
         <h3>VENHA FAZER PARTE DO NOSSO <br> TIME DE VOLUNTÁRIOS!</h3>
-        <Button  @click="irParaWhatsApp" class="button--secondary">QUERO ME TORNA</Button>
+        <Button @click="irParaWhatsApp" class="button--secondary">QUERO ME TORNA</Button>
       </Card>
     </div>
     <div class="somos">
@@ -82,7 +82,7 @@
             </div>
             <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
               cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.</p>
-            <Button class="button--Tertiary">CONHECER!</Button>
+            <Button class="button--Tertiary"  @click="irParaCultos">CONHECER!</Button>
           </div>
         </Card>
         <Card :isCentered="true" width="100%" height="380px" background="linear-gradient(to right, black, gray)">
@@ -93,37 +93,42 @@
             </div>
             <p>Por que esperar até domingo? Junte-se a nós no Culto Fé às terças-feiras! Estamos ansiosos para te ver
               pessoalmente!</p>
-            <Button class="button--Tertiary">CONHECER!</Button>
+            <Button class="button--Tertiary"  @click="irParaCultos">CONHECER!</Button>
           </div>
         </Card>
         <Card :isCentered="true" width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPG" :hasOverlay="true">
           <div class="content mudanca">
             <p>Nossos domingos de celebração são incríveis! Venha ter uma experiência única com Jesus. Oferecemos 4
               cultos; escolha o melhor horário, incluindo opções acessíveis para Libras.</p>
-            <Button class="button--Tertiary aovivo"  @click="irParaYouTube" >ASSISTIR AOVIVO!</Button>
+            <Button class="button--Tertiary aovivo" @click="irParaYouTube">ASSISTIR AOVIVO!</Button>
           </div>
         </Card>
       </div>
     </div>
     <div class="canal">
-      <Card  :isCentered="true" class="content" width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPEG" :hasOverlay="true">
+      <Card :isCentered="true" class="content" width="100%" height="380px" backgroundImage="/assets/QUEMSOMOS.JPEG"
+        :hasOverlay="true">
         <h3>CONHEÇA LAGOINHA <br>DE CASA</h3>
       </Card>
       <div class="tube">
-        <Card :isCentered="true" width="17rem" height="10rem" backgroundImage="/assets/youtube1.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=VWqPiyvHTGE', '_blank')">
+        <Card :isCentered="true" width="17rem" height="10rem" backgroundImage="/assets/youtube1.webp"
+          @click="irParaYouTube('https://www.youtube.com/watch?v=VWqPiyvHTGE', '_blank')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube2.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4', '_blank')">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube2.webp" 
+          @click="irParaYouTube('https://www.youtube.com/watch?v=video4', '_blank')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube3.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4', '_blank' )">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube3.webp" 
+          @click="irParaYouTube('https://www.youtube.com/watch?v=video4', '_blank')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
-        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube4.webp" :hasOverlay="true"  @click="irParaYouTube('https://www.youtube.com/watch?v=video4', '_blank')">
+        <Card width="17rem" height="10rem" backgroundImage="/assets/youtube4.webp" 
+          @click="irParaYouTube('https://www.youtube.com/watch?v=video4', '_blank')">
           <font-awesome-icon :icon="['far', 'circle-play']" />
         </Card>
       </div>
-      <Button class="button--fourth"  @click="irParaYouTube">VER MAIS CONTEUDO</Button>
+      <Button class="button--fourth" @click="irParaYouTube">VER MAIS CONTEUDO</Button>
     </div>
     <div class="fale">
       <h3>FALE CONOSCO</h3>
@@ -204,11 +209,14 @@ export default {
       }, 500);
     },
     irParaWhatsApp() {
-      window.location.href = 'https://wa.me/13996668900', '_blank';
+      window.open('https://wa.me/13996668900', '_blank');
     },
     irParaYouTube() {
-      window.location.href = 'https://www.youtube.com/@lagoinhasantos', '_blank';
-    }
+      window.open('https://www.youtube.com/@lagoinhasantos', '_blank');
+    },
+    irParaCultos() {
+    window.location.href = '/cultos';  
+  }
   },
   computed: {
     isMobile() {
@@ -218,7 +226,7 @@ export default {
   watch: {
     '$route'() {
       this.$nextTick(() => {
-        this.isMobile; 
+        this.isMobile;
       });
     }
   }
@@ -257,7 +265,7 @@ export default {
   transition: opacity 1s ease-in-out;
 }
 
-.overlay.fade-enter, 
+.overlay.fade-enter,
 .overlay.fade-leave-to {
   opacity: 0;
 }
@@ -340,7 +348,7 @@ export default {
   position: relative;
 }
 
-.cards .content .centered{
+.cards .content .centered {
   display: flex;
   flex-direction: column
 }
@@ -556,7 +564,7 @@ export default {
 .canal .tube svg {
   font-size: 3rem;
   color: #FFC700;
-  opacity: 20%;
+  opacity: 70%;
 }
 
 .fale {
@@ -652,8 +660,8 @@ i {
   }
 
   .programacao h3 {
-        font-size: 2rem;
-    }
+    font-size: 2rem;
+  }
 
   .cards {
     display: flex;

@@ -32,7 +32,7 @@
                 </div>
             </div>
             <p class="direitos">Lagoinha Santos - Todos os direitos reservados © 2024</p>
-            <p class="name">Site feito com muito amor | <a href="">Victor Lima</a>💙</p>
+            <p class="name">Site feito com muito amor | <a href="javascript:void(0);" @click="irParaWhatsApp">Victor Lima</a>💙</p>
         </div>
     </footer>
 </template>
@@ -71,6 +71,9 @@ export default {
                 }
             });
         },
+        irParaWhatsApp() {
+        window.open('https://wa.me/13991822130', '_blank');
+    },
         scrollToTop(duration) {
             const start = window.scrollY;
             const startTime = performance.now();
@@ -172,7 +175,7 @@ a {
     color: gray;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 940px) {
     .thefooter {
         padding: 2rem 1rem;
         color: white;
@@ -188,6 +191,10 @@ a {
         width: 100%;
         height: auto;
         margin-top: 2rem;
+    }
+
+    .logo p {
+        font-size: 1rem;
     }
 }
 
