@@ -51,17 +51,36 @@ export default {
         { text: 'CONTATO', url: 'contato' },
       ],
       menuOpen: false,
-      isMobile: false, 
-      logoWidth: '350px',  
+      isMobile: false,
+      logoWidth: '350px',
     };
   },
   methods: {
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
+      this.scrollToTop(500); // Rola até o topo quando o menu for clicado
     },
     updateLayout() {
       this.isMobile = window.innerWidth < 900;
       this.logoWidth = this.isMobile ? '250px' : '350px';
+    },
+    scrollToTop(duration) {
+      const start = window.scrollY;
+      const startTime = performance.now();
+
+      const step = (timestamp) => {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeInOutQuad = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+        window.scrollTo(0, start - start * easeInOutQuad(progress));
+
+        if (elapsed < duration) {
+          requestAnimationFrame(step);
+        }
+      };
+
+      requestAnimationFrame(step);
     },
   },
   watch: {
@@ -279,4 +298,3 @@ i {
   }
 }
 </style>
- 
