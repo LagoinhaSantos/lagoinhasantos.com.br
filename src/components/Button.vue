@@ -114,4 +114,9 @@ export default {
     background-color: #ffc8006e;
     color: white;
 }
+
+a {
+    color: white;
+    text-decoration: none;
+}
 </style>

@@ -13,12 +13,12 @@
                     inclusão e comunicação eficaz com pessoas surdas. Descubra gestos, sinais e a cultura surda,
                     contribuindo para um ambiente mais inclusivo em nossa comunidade. Junte-se a nós nessa jornada de
                     aprendizado da linguagem do amor e da inclusão.</p>
-                <p>CURSO DE LIBRAS: Segunda 20h, Quarta 18h, Sábado 10h</p>
-                <p>LOCALIZAÇÃO: Rua Carvalho de Mendonça, 74, Santos, SP, Brasil</p>
+                <!-- <p>CURSO DE LIBRAS: 20:00h às 20:00h</p> -->
+                <p>LOCALIZAÇÃO: Avenida Visconde de São Leopoldo, 653, Santos, SP, Brasil</p>
                 <Button class="button--fifty">SAIBA MAIS</Button>
             </div>
         </div>
-        <div class="content">
+        <!-- <div class="content">
             <div class="tex text">
                 <h4>CURSO DE <br> LIBRAS</h4>
                 <p>Participe do curso de Libras na Lagoinha Santos e aprenda a Língua Brasileira de Sinais para promover
@@ -32,7 +32,7 @@
             <div class="libras">
                 <Card :width="cardWidth" :height="cardHeight" backgroundImage="/assets/espanhol.jpg" />
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 

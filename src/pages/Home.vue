@@ -53,7 +53,7 @@
       <Card width="" height="470px" backgroundImage="/assets/FAÇAPARTEDONOSSOTIMEDEVOLUNTÁRIOS.JPG"
         :hasOverlay="true" backgroundPosition="auto">
         <h3>VENHA FAZER PARTE DO NOSSO <br> TIME DE VOLUNTÁRIOS!</h3>
-        <Button @click="irParaWhatsApp" class="button--secondary">QUERO ME TORNA</Button>
+        <Button @click="irParaWhatsApp" class="button--secondary">QUERO ME TORNAR</Button>
       </Card>
     </div>
     <div class="somos">

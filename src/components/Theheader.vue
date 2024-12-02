@@ -58,7 +58,7 @@ export default {
   methods: {
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
-      this.scrollToTop(500); // Rola até o topo quando o menu for clicado
+      this.scrollToTop(500); 
     },
     updateLayout() {
       this.isMobile = window.innerWidth < 900;
@@ -85,7 +85,7 @@ export default {
 
     // Métodos para redirecionar para as redes sociais
     goToWhatsApp() {
-      window.open('https://wa.me/139996668900', '_blank');
+      window.open('https://wa.me/13996668900', '_blank');
     },
     goToInstagram() {
       window.open('https://www.instagram.com/lagoinhasantos/?igsh=cXdsd3Npa2lkeG9w', '_blank');
