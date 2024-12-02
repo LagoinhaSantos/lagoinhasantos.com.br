@@ -4,23 +4,20 @@
             <div class="content">
                 <div class="logo">
                     <img src="/public/assets/LOGOSANTOS.png" alt="logo">
-                    <p>Seja bem-vindo à Lagoinha Santos! Esteja pronto <br> para ser impactado pela mensagem da Cruz.
-                    </p>
-                    <p>Nosso foco é em servir a Deus e amar as <br> pessoas, entendendo que é assim que <br>cumprimos
-                        nosso propósito.</p>
+                    <p>Seja bem-vindo à Lagoinha Santos! Esteja pronto <br> para ser impactado pela mensagem da Cruz.</p>
+                    <p>Nosso foco é em servir a Deus e amar as <br> pessoas, entendendo que é assim que <br>cumprimos nosso propósito.</p>
                     <p>Nós amamos, vivemos e servimos!</p>
                     <p>SEJA PARTE DO NOVO!</p>
                 </div>
                 <div class="redes">
-                    <router-link v-for="(link, index) in links" :key="index" :to="`/${link.url}`"
-                        exact-active-class="active" @click.native="handleLinkClick(link.url, $event)">
+                    <router-link v-for="(link, index) in links" :key="index" :to="`/${link.url}`" exact-active-class="active" @click.native="handleLinkClick(link.url, $event)">
                         <p>{{ link.text }}</p>
                     </router-link>
 
                     <div class="social">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-whatsapp" @click="goToWhatsApp"></i>
+                        <i class="fa-brands fa-instagram" @click="goToInstagram"></i>
+                        <i class="fa-brands fa-facebook" @click="goToFacebook"></i>
                     </div>
                 </div> 
                 <div class="maps">
@@ -74,6 +71,15 @@ export default {
         },
         irParaWhatsApp() {
             window.open('https://wa.me/13991822130', '_blank');
+        },
+        goToWhatsApp() {
+            window.open('https://wa.me/5513996668900', '_blank');
+        },
+        goToInstagram() {
+            window.open('https://www.instagram.com/lagoinhasantos/?igsh=cXdsd3Npa2lkeG9w', '_blank');
+        },
+        goToFacebook() {
+            window.open('https://www.facebook.com/share/1NZk3T3bAJ/?mibextid=LQQJ4d', '_blank');
         },
         scrollToTop(duration) {
             const start = window.scrollY;
@@ -186,7 +192,6 @@ a {
     .name {
         text-align: center;
     }
-
 
     iframe {
         width: 100%;

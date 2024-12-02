@@ -22,9 +22,9 @@
           {{ link.text }}
         </router-link>
         <div class="social">
-          <i class="fa-brands fa-whatsapp"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-whatsapp" @click="goToWhatsApp"></i>
+          <i class="fa-brands fa-instagram" @click="goToInstagram"></i>
+          <i class="fa-brands fa-facebook" @click="goToFacebook"></i>
         </div>
       </div>
 
@@ -81,6 +81,17 @@ export default {
       };
 
       requestAnimationFrame(step);
+    },
+
+    // Métodos para redirecionar para as redes sociais
+    goToWhatsApp() {
+      window.open('https://wa.me/139996668900', '_blank');
+    },
+    goToInstagram() {
+      window.open('https://www.instagram.com/lagoinhasantos/?igsh=cXdsd3Npa2lkeG9w', '_blank');
+    },
+    goToFacebook() {
+      window.open('https://www.facebook.com/share/1NZk3T3bAJ/?mibextid=LQQJ4d', '_blank');
     },
   },
   watch: {
