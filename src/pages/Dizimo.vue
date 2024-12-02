@@ -2,6 +2,7 @@
     <div class="dizimo">
         <div class="top">
             <h3>DÍZIMOS E OFERTAS</h3>
+            <div class="bolinha"></div>
         </div>
         <Card width="100%" height="250px" backgroundImage="/assets/IMG_2021.JPG" :hasOverlay="true">
             <p>Faça sua contribuição através de uma das nossas contas bancárias.</p>
@@ -73,35 +74,40 @@ export default {
     display: none;
 }
 
+.top {
+    position: relative;
+
+}
+
 .top h3 {
     font-size: 4rem;
+    display: flex;
+    flex-direction: column;
     line-height: 1;
-    position: relative;
     padding: 0 0.5rem;
     letter-spacing: 0.1em;
 }
 
 .top h3::after {
+    position: relative;
     content: '';
     border: 2px solid #FFC700;
-    width: 220%;
-    position: absolute;
+    width: 90%;
     left: -5%; 
-    transform: translateX(-50%);
     bottom: -1rem;
 }
-
-.top h3::before {
-    content: '';
+/* 
+.top .bolinha {
     position: absolute;
     width: 12px;
     height: 12px;
     background-color: #FFC700;
     border-radius: 50%;
-    bottom: -1.6rem; 
-    right: -2.4rem;
+    bottom: 15px;
+    right: 10%;
+
     transform: translateX(50%) translateY(-50%);
-}
+} */
 
 .dizimo {
     display: flex;
@@ -178,11 +184,10 @@ export default {
     .top h3 {
     font-size: 3rem;
     line-height: 0.9;
-    position: relative;
     padding: 0 0.5rem;
     letter-spacing: 0.05em;
 }
-
+/* 
 .top h3::after {
     content: '';
     border: 2px solid #FFC700;
@@ -203,7 +208,7 @@ export default {
     bottom: -1.6rem; 
     right: 13rem;
     transform: translateX(50%) translateY(-50%);
-}
+} */
 
 .dizimo .card p {
     font-size: 1.2rem;
